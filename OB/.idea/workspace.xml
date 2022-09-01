@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00501a46-a1b4-40b7-b5b2-a1a7e409a9ca" name="Default Changelist" comment="杨鹏第一次提交" />
+    <list default="true" id="00501a46-a1b4-40b7-b5b2-a1a7e409a9ca" name="Default Changelist" comment="杨鹏第五次提交" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +110,21 @@
       <option name="project" value="LOCAL" />
       <updated>1662020597746</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="杨鹏第四次提交">
+      <created>1662022395776</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1662022395776</updated>
+    </task>
+    <task id="LOCAL-00003" summary="杨鹏第五次提交">
+      <created>1662022448100</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1662022448100</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -121,7 +135,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -130,6 +156,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="杨鹏第一次提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="杨鹏第一次提交" />
+    <MESSAGE value="杨鹏第四次提交" />
+    <MESSAGE value="杨鹏第五次提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="杨鹏第五次提交" />
   </component>
 </project>
