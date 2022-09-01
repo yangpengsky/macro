@@ -12,7 +12,7 @@ public class OBApplication {
     public static void main(String[] args) {
 
 
-        System.out.println("yangpeng-----------------");
+        System.out.println("yangpeng----------------");
         SpringApplication.run(OBApplication.class,args);
     }
 }
