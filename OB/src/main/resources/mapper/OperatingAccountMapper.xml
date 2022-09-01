@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.ob.mapper.OperatingAccountMapper">
+
+    <resultMap id="BaseResultMap" type="com.macro.ob.pojo.OperatingAccount">
+            <id property="operationAccountId" column="operation_account_id" jdbcType="INTEGER"/>
+            <result property="userName" column="user_name" jdbcType="VARCHAR"/>
+            <result property="name" column="name" jdbcType="VARCHAR"/>
+            <result property="affiliation" column="affiliation" jdbcType="VARCHAR"/>
+            <result property="productLine" column="product_line" jdbcType="VARCHAR"/>
+            <result property="role" column="role" jdbcType="VARCHAR"/>
+            <result property="gender" column="gender" jdbcType="VARCHAR"/>
+            <result property="email" column="email" jdbcType="VARCHAR"/>
+            <result property="phoneNumber" column="phone_number" jdbcType="INTEGER"/>
+            <result property="operationAccountState" column="operation_account_state" jdbcType="VARCHAR"/>
+            <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+            <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        operation_account_id,user_name,name,
+        affiliation,product_line,role,
+        gender,email,phone_number,
+        operation_account_state,created_time,updated_time
+    </sql>
+
+    <insert id="insertOperatingAccountInfo" parameterType="com.macro.ob.pojo.OperatingAccount">
+        insert into macrodb.operating_accout(<include refid="Base_Column_List" />)
+        values(#{userName},#{name},#{affiliation},#{});
+
+    </insert>
+
+</mapper>
