@@ -1,0 +1,110 @@
+Index: src/main/resources/mapper/ProductMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE mapper\r\n        PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\r\n        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\r\n<mapper namespace=\"com.macro.ocp.mapper.ProductMapper\">\r\n\r\n    <resultMap id=\"BaseResultMap\" type=\"com.macro.ocp.pojo.Product\">\r\n            <id property=\"productCode\" column=\"product_code\" jdbcType=\"INTEGER\"/>\r\n            <result property=\"productLine\" column=\"product_line\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productName\" column=\"product_name\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productAbbreviation\" column=\"product_abbreviation\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"uomCode\" column=\"uom_code\" jdbcType=\"INTEGER\"/>\r\n            <result property=\"uomName\" column=\"uom_name\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"specifications\" column=\"specifications\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"categoryCode\" column=\"category_code\" jdbcType=\"INTEGER\"/>\r\n            <result property=\"categoryName\" column=\"category_name\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productModel\" column=\"product_model\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"aftersalesModel\" column=\"aftersales_model\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productColor\" column=\"product_color\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"barCode\" column=\"bar_code\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"retailPrice\" column=\"retail_price\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"pickupPrice\" column=\"pickup_price\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"ticketPrice\" column=\"ticket_price\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"standardPrice\" column=\"standard_price\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"premiumRatio\" column=\"premium_ratio\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"premiumLimit\" column=\"premium_limit\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"effectiveDate\" column=\"effective_date\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"expirationTime\" column=\"expiration_time\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"modifyTime\" column=\"modify_time\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"modifyBy\" column=\"modify_by\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"salesAttributes\" column=\"sales_attributes\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"gasSpecies\" column=\"gas_species\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productAttributes\" column=\"product_attributes\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"volume\" column=\"volume\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"weight\" column=\"weight\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"length\" column=\"length\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"width\" column=\"width\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"height\" column=\"height\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"isnewProduct\" column=\"isnew_product\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"issales\" column=\"issales\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"isstopProduction\" column=\"isstop_production\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"issuspendProduction\" column=\"issuspend_production\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"createTime\" column=\"create_time\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"updateTime\" column=\"update_time\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"remarks\" column=\"remarks\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productStatus\" column=\"product_status\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"shippingWarehouse\" column=\"shipping_warehouse\" jdbcType=\"VARCHAR\"/>\r\n    </resultMap>\r\n\r\n    <sql id=\"Base_Column_List\">\r\n        product_code,product_line,product_name,\r\n        product_abbreviation,uom_code,uom_name,\r\n        specifications,category_code,category_name,\r\n        product_model,aftersales_model,product_color,\r\n        bar_code,retail_price,pickup_price,\r\n        ticket_price,standard_price,premium_ratio,\r\n        premium_limit,effective_date,expiration_time,\r\n        modify_time,modify_by,sales_attributes,\r\n        gas_species,product_attributes,volume,\r\n        weight,length,width,\r\n        height,isnew_product,issales,\r\n        isstop_production,issuspend_production,create_time,\r\n        update_time,remarks,product_status,\r\n        shipping_warehouse\r\n    </sql>\r\n</mapper>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/mapper/ProductMapper.xml b/src/main/resources/mapper/ProductMapper.xml
+--- a/src/main/resources/mapper/ProductMapper.xml	(revision 176aa4f5608569a31d40acd13f21fd55ffec9320)
++++ b/src/main/resources/mapper/ProductMapper.xml	(date 1662020046269)
+@@ -23,7 +23,7 @@
+             <result property="ticketPrice" column="ticket_price" jdbcType="DECIMAL"/>
+             <result property="standardPrice" column="standard_price" jdbcType="DECIMAL"/>
+             <result property="premiumRatio" column="premium_ratio" jdbcType="DECIMAL"/>
+-            <result property="premiumLimit" column="premium_limit" jdbcType="VARCHAR"/>
++            <result property="premiumLimit" column="premium_limit" jdbcType="DECIMAL"/>
+             <result property="effectiveDate" column="effective_date" jdbcType="TIMESTAMP"/>
+             <result property="expirationTime" column="expiration_time" jdbcType="TIMESTAMP"/>
+             <result property="modifyTime" column="modify_time" jdbcType="TIMESTAMP"/>
+Index: src/main/java/com/macro/ocp/mapper/ProductMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.macro.ocp.mapper;\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\nimport com.macro.ocp.pojo.Product;\r\n\r\n/**\r\n* @author Admin\r\n* @description 针对表【product(产品表)】的数据库操作Mapper\r\n* @createDate 2022-09-01 14:44:42\r\n* @Entity com.macro.ocp.pojo.Product\r\n*/\r\npublic interface ProductMapper extends BaseMapper<Product> {\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/mapper/ProductMapper.java b/src/main/java/com/macro/ocp/mapper/ProductMapper.java
+--- a/src/main/java/com/macro/ocp/mapper/ProductMapper.java	(revision 176aa4f5608569a31d40acd13f21fd55ffec9320)
++++ b/src/main/java/com/macro/ocp/mapper/ProductMapper.java	(date 1662020057662)
+@@ -1,5 +1,17 @@
+ package com.macro.ocp.mapper;
+ 
++<<<<<<< HEAD
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++
++/**
++* @author meng
++* @description 针对表【product(产品表)】的数据库操作Mapper
++* @createDate 2022-09-01 15:27:40
++* @Entity com.macro.ocp.pojo.Product
++*/
++public interface ProductMapper extends BaseMapper {
++=======
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ import com.macro.ocp.pojo.Product;
+ 
+@@ -10,6 +22,7 @@
+ * @Entity com.macro.ocp.pojo.Product
+ */
+ public interface ProductMapper extends BaseMapper<Product> {
++>>>>>>> 176aa4f5608569a31d40acd13f21fd55ffec9320
+ 
+ 
+ }
+Index: src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.macro.ocp.service.impl;\r\n\r\nimport com.macro.ocp.service.ProductService;\r\nimport org.springframework.stereotype.Service;\r\n\r\n/**\r\n* @author Admin\r\n* @description 针对表【product(产品表)】的数据库操作Service实现\r\n* @createDate 2022-09-01 14:44:42\r\n*/\r\n@Service\r\npublic class ProductServiceImpl implements ProductService{\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java b/src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java
+--- a/src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java	(revision 176aa4f5608569a31d40acd13f21fd55ffec9320)
++++ b/src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java	(date 1662020059280)
+@@ -4,9 +4,15 @@
+ import org.springframework.stereotype.Service;
+ 
+ /**
++<<<<<<< HEAD
++* @author meng
++* @description 针对表【product(产品表)】的数据库操作Service实现
++* @createDate 2022-09-01 15:27:40
++=======
+ * @author Admin
+ * @description 针对表【product(产品表)】的数据库操作Service实现
+ * @createDate 2022-09-01 14:44:42
++>>>>>>> 176aa4f5608569a31d40acd13f21fd55ffec9320
+ */
+ @Service
+ public class ProductServiceImpl implements ProductService{
+Index: src/main/java/com/macro/ocp/service/ProductService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.macro.ocp.service;\r\n\r\n\r\n/**\r\n* @author zhangkein\r\n* @description 针对表【product(产品表)】的数据库操作Service\r\n* @createDate 2022-09-01 14:44:42\r\n*/\r\npublic interface ProductService {\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/service/ProductService.java b/src/main/java/com/macro/ocp/service/ProductService.java
+--- a/src/main/java/com/macro/ocp/service/ProductService.java	(revision 176aa4f5608569a31d40acd13f21fd55ffec9320)
++++ b/src/main/java/com/macro/ocp/service/ProductService.java	(date 1662020060477)
+@@ -2,10 +2,18 @@
+ 
+ 
+ /**
++<<<<<<< HEAD
++* @author meng
++* @description 针对表【product(产品表)】的数据库操作Service
++* @createDate 2022-09-01 15:27:40
++*/
++public interface ProductService{
++=======
+ * @author zhangkein
+ * @description 针对表【product(产品表)】的数据库操作Service
+ * @createDate 2022-09-01 14:44:42
+ */
+ public interface ProductService {
++>>>>>>> 176aa4f5608569a31d40acd13f21fd55ffec9320
+ 
+ }

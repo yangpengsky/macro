@@ -1,0 +1,721 @@
+Index: src/main/resources/mapper/ProductMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<!DOCTYPE mapper\r\n        PUBLIC \"-//mybatis.org//DTD Mapper 3.0//EN\"\r\n        \"http://mybatis.org/dtd/mybatis-3-mapper.dtd\">\r\n<mapper namespace=\"com.macro.ocp.mapper.ProductMapper\">\r\n\r\n    <resultMap id=\"BaseResultMap\" type=\"com.macro.ocp.pojo.Product\">\r\n            <id property=\"productCode\" column=\"product_code\" jdbcType=\"INTEGER\"/>\r\n            <result property=\"productLine\" column=\"product_line\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productName\" column=\"product_name\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productAbbreviation\" column=\"product_abbreviation\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"uomCode\" column=\"uom_code\" jdbcType=\"INTEGER\"/>\r\n            <result property=\"uomName\" column=\"uom_name\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"specifications\" column=\"specifications\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"categoryCode\" column=\"category_code\" jdbcType=\"INTEGER\"/>\r\n            <result property=\"categoryName\" column=\"category_name\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productModel\" column=\"product_model\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"aftersalesModel\" column=\"aftersales_model\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productColor\" column=\"product_color\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"barCode\" column=\"bar_code\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"retailPrice\" column=\"retail_price\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"pickupPrice\" column=\"pickup_price\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"ticketPrice\" column=\"ticket_price\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"standardPrice\" column=\"standard_price\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"premiumRatio\" column=\"premium_ratio\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"premiumLimit\" column=\"premium_limit\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"effectiveDate\" column=\"effective_date\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"expirationTime\" column=\"expiration_time\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"modifyTime\" column=\"modify_time\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"modifyBy\" column=\"modify_by\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"salesAttributes\" column=\"sales_attributes\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"gasSpecies\" column=\"gas_species\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productAttributes\" column=\"product_attributes\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"volume\" column=\"volume\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"weight\" column=\"weight\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"length\" column=\"length\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"width\" column=\"width\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"height\" column=\"height\" jdbcType=\"DECIMAL\"/>\r\n            <result property=\"isnewProduct\" column=\"isnew_product\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"issales\" column=\"issales\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"isstopProduction\" column=\"isstop_production\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"issuspendProduction\" column=\"issuspend_production\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"createTime\" column=\"create_time\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"updateTime\" column=\"update_time\" jdbcType=\"TIMESTAMP\"/>\r\n            <result property=\"remarks\" column=\"remarks\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"productStatus\" column=\"product_status\" jdbcType=\"VARCHAR\"/>\r\n            <result property=\"shippingWarehouse\" column=\"shipping_warehouse\" jdbcType=\"VARCHAR\"/>\r\n    </resultMap>\r\n\r\n    <sql id=\"Base_Column_List\">\r\n        product_code,product_line,product_name,\r\n        product_abbreviation,uom_code,uom_name,\r\n        specifications,category_code,category_name,\r\n        product_model,aftersales_model,product_color,\r\n        bar_code,retail_price,pickup_price,\r\n        ticket_price,standard_price,premium_ratio,\r\n        premium_limit,effective_date,expiration_time,\r\n        modify_time,modify_by,sales_attributes,\r\n        gas_species,product_attributes,volume,\r\n        weight,length,width,\r\n        height,isnew_product,issales,\r\n        isstop_production,issuspend_production,create_time,\r\n        update_time,remarks,product_status,\r\n        shipping_warehouse\r\n    </sql>\r\n</mapper>\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/mapper/ProductMapper.xml b/src/main/resources/mapper/ProductMapper.xml
+--- a/src/main/resources/mapper/ProductMapper.xml	(revision 675ec0c6da6c88489b97e6496fe49b6f9110258d)
++++ b/src/main/resources/mapper/ProductMapper.xml	(date 1662019327970)
+@@ -23,7 +23,11 @@
+             <result property="ticketPrice" column="ticket_price" jdbcType="DECIMAL"/>
+             <result property="standardPrice" column="standard_price" jdbcType="DECIMAL"/>
+             <result property="premiumRatio" column="premium_ratio" jdbcType="DECIMAL"/>
++<<<<<<< HEAD
+             <result property="premiumLimit" column="premium_limit" jdbcType="DECIMAL"/>
++=======
++            <result property="premiumLimit" column="premium_limit" jdbcType="VARCHAR"/>
++>>>>>>> 176aa4f5608569a31d40acd13f21fd55ffec9320
+             <result property="effectiveDate" column="effective_date" jdbcType="TIMESTAMP"/>
+             <result property="expirationTime" column="expiration_time" jdbcType="TIMESTAMP"/>
+             <result property="modifyTime" column="modify_time" jdbcType="TIMESTAMP"/>
+Index: ../OB/src/main/resources/banner.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../OB/src/main/resources/banner.txt b/../OB/src/main/resources/banner.txt
+new file mode 100644
+--- /dev/null	(date 1662019327964)
++++ b/../OB/src/main/resources/banner.txt	(date 1662019327964)
+@@ -0,0 +1,28 @@
++${AnsiColor.BRIGHT_GREEN}
++
++           ▒▒               ███████                  ░░░░░░░░░░░                    ░░░
++         ▒▒▒▒             ████████████             ░░░░░░░░░░░░░░░                ░░░░░
++       ▒▒▒▒▒▒            ████      ████           ░░░░░        ░░░░              ░░░░░░
++     ▒▒▒▒▒▒▒▒           ████         ███          ░░░░         ░░░░             ░░░ ░░░
++   ▒▒▒▒▒  ▒▒▒          ████           ███          ░░         ░░░░░           ░░░░  ░░░
++   ▒▒     ▒▒▒          ███            ███                    ░░░░░           ░░░░   ░░░
++          ▒▒▒          ███            ███                 ░░░░░░            ░░░░    ░░░
++          ▒▒▒          ███            ███               ░░░░░             ░░░░      ░░░
++          ▒▒▒          ███            ███             ░░░░░             ░░░░░░░░░░░░░░░░░░
++          ▒▒▒           ███         ████            ░░░░                            ░░░
++          ▒▒▒            ███       ████           ░░░░                              ░░░
++          ▒▒▒             ████████████           ░░░░░░░░░░░░░░░░░░                 ░░░
++          ▒▒                 ██████              ░░░░░░░░░░░░░░░░░░                 ░░
++
++   ██░ ██ ▓█████  ██▓     ██▓     ▒█████        █     █░ ▒█████   ██▀███   ██▓    ▓█████▄
++  ▓██░ ██▒▓█   ▀ ▓██▒    ▓██▒    ▒██▒  ██▒     ▓█░ █ ░█░▒██▒  ██▒▓██ ▒ ██▒▓██▒    ▒██▀ ██▌
++  ▒██▀▀██░▒███   ▒██░    ▒██░    ▒██░  ██▒     ▒█░ █ ░█ ▒██░  ██▒▓██ ░▄█ ▒▒██░    ░██   █▌
++  ░▓█ ░██ ▒▓█  ▄ ▒██░    ▒██░    ▒██   ██░     ░█░ █ ░█ ▒██   ██░▒██▀▀█▄  ▒██░    ░▓█▄   ▌
++  ░▓█▒░██▓░▒████▒░██████▒░██████▒░ ████▓▒░     ░░██▒██▓ ░ ████▓▒░░██▓ ▒██▒░██████▒░▒████▓
++   ▒ ░░▒░▒░░ ▒░ ░░ ▒░▓  ░░ ▒░▓  ░░ ▒░▒░▒░      ░ ▓░▒ ▒  ░ ▒░▒░▒░ ░ ▒▓ ░▒▓░░ ▒░▓  ░ ▒▒▓  ▒
++   ▒ ░▒░ ░ ░ ░  ░░ ░ ▒  ░░ ░ ▒  ░  ░ ▒ ▒░        ▒ ░ ░    ░ ▒ ▒░   ░▒ ░ ▒░░ ░ ▒  ░ ░ ▒  ▒
++   ░  ░░ ░   ░     ░ ░     ░ ░   ░ ░ ░ ▒         ░   ░  ░ ░ ░ ▒    ░░   ░   ░ ░    ░ ░  ░
++   ░  ░  ░   ░  ░    ░  ░    ░  ░    ░ ░           ░        ░ ░     ░         ░  ░   ░
++                                                                                   ░
++
++                                                                    --by onedream.top
+\ No newline at end of file
+Index: ../OB/src/main/java/com/macro/ob/config/Redis2JsonConfigration.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../OB/src/main/java/com/macro/ob/config/Redis2JsonConfigration.java b/../OB/src/main/java/com/macro/ob/config/Redis2JsonConfigration.java
+new file mode 100644
+--- /dev/null	(date 1662019327963)
++++ b/../OB/src/main/java/com/macro/ob/config/Redis2JsonConfigration.java	(date 1662019327963)
+@@ -0,0 +1,38 @@
++package com.macro.ob.config;
++
++import com.fasterxml.jackson.annotation.JsonAutoDetect;
++import com.fasterxml.jackson.annotation.JsonTypeInfo;
++import com.fasterxml.jackson.annotation.PropertyAccessor;
++import com.fasterxml.jackson.databind.ObjectMapper;
++import com.fasterxml.jackson.databind.jsontype.impl.LaissezFaireSubTypeValidator;
++import org.springframework.context.annotation.Bean;
++import org.springframework.context.annotation.Configuration;
++import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
++import org.springframework.data.redis.core.RedisTemplate;
++import org.springframework.data.redis.serializer.Jackson2JsonRedisSerializer;
++import org.springframework.data.redis.serializer.StringRedisSerializer;
++
++import java.text.SimpleDateFormat;
++
++/**
++ * 缓存序列化与序列化格式
++ * @author zhangkein
++ */
++@Configuration
++public class Redis2JsonConfigration {
++
++    @Bean
++    public RedisTemplate redisTemplate(LettuceConnectionFactory factory){
++        RedisTemplate<String, Object> redisTemplate = new RedisTemplate<>();
++        Jackson2JsonRedisSerializer jsonRedisSerializer = new Jackson2JsonRedisSerializer(Object.class);
++        ObjectMapper objectMapper = new ObjectMapper();
++        objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
++        objectMapper.activateDefaultTyping(LaissezFaireSubTypeValidator.instance ,ObjectMapper.DefaultTyping.NON_FINAL ,JsonTypeInfo.As.WRAPPER_ARRAY);
++        objectMapper.setDateFormat(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
++        jsonRedisSerializer.setObjectMapper(objectMapper);
++        redisTemplate.setKeySerializer(new StringRedisSerializer());
++        redisTemplate.setValueSerializer(jsonRedisSerializer);
++        redisTemplate.setConnectionFactory(factory);
++        return  redisTemplate;
++    }
++}
+Index: ../OB/src/main/java/com/macro/ob/config/MyCacheManger.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../OB/src/main/java/com/macro/ob/config/MyCacheManger.java b/../OB/src/main/java/com/macro/ob/config/MyCacheManger.java
+new file mode 100644
+--- /dev/null	(date 1662019327962)
++++ b/../OB/src/main/java/com/macro/ob/config/MyCacheManger.java	(date 1662019327962)
+@@ -0,0 +1,52 @@
++package com.macro.ob.config;
++
++import org.springframework.context.annotation.Bean;
++import org.springframework.context.annotation.Configuration;
++import org.springframework.data.redis.cache.RedisCacheConfiguration;
++import org.springframework.data.redis.cache.RedisCacheManager;
++import org.springframework.data.redis.core.RedisTemplate;
++import org.springframework.data.redis.serializer.RedisSerializationContext;
++
++import javax.annotation.Resource;
++import java.time.Duration;
++
++
++/**
++ *
++ * 缓存自动序列化格式与缓存生存周期
++ * @author zhangkein
++ */
++@Configuration
++public class MyCacheManger {
++
++    @Resource
++    private RedisTemplate redisTemplate;
++
++    RedisCacheConfiguration getCacheConfigurationWithTtl(long seconds)
++    {
++        return RedisCacheConfiguration
++                .defaultCacheConfig()
++                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(redisTemplate.getStringSerializer()))
++                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisTemplate.getValueSerializer()))
++                .disableCachingNullValues()
++                .entryTtl(Duration.ofSeconds(seconds));
++    }
++
++    @Bean
++    public RedisCacheManager redisCacheManager(){
++        RedisCacheConfiguration defaultCacheConfiguration = RedisCacheConfiguration
++                .defaultCacheConfig()
++                .serializeKeysWith(RedisSerializationContext.SerializationPair.fromSerializer(redisTemplate.getStringSerializer()))
++                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(redisTemplate.getValueSerializer()))
++                .disableCachingNullValues();
++
++        RedisCacheManager redisCacheManager = RedisCacheManager.RedisCacheManagerBuilder
++                .fromConnectionFactory(redisTemplate.getConnectionFactory())
++                .withCacheConfiguration("empinfo", getCacheConfigurationWithTtl(5 * 60))//2分钟
++                .cacheDefaults(getCacheConfigurationWithTtl( 60 * 60))//60分钟
++                .transactionAware()
++                .build();
++        return redisCacheManager;
++
++    }
++}
+Index: ../OB/src/main/resources/application.yml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../OB/src/main/resources/application.yml b/../OB/src/main/resources/application.yml
+new file mode 100644
+--- /dev/null	(date 1662019327964)
++++ b/../OB/src/main/resources/application.yml	(date 1662019327964)
+@@ -0,0 +1,61 @@
++server:
++  port: 8081  #启动端口
++
++spring:
++ servlet:
++   multipart:  #设置文件大小上传限制
++     max-file-size: 3000MB
++     max-request-size: 4000MB
++ datasource:
++   driver-class-name: com.mysql.cj.jdbc.Driver
++   url: jdbc:mysql://106.14.113.4:3306/macrodb?allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false
++   username: root
++   password: "MACROyangpeng"
++
++ redis:
++   host: onedream.top
++   port: 7617
++   password: "CFPLHYS?proxy@predixy#zgyfjch"
++
++
++ jackson:
++   #    传输给前端的时间格式
++   date-format: yyyy-MM-dd HH:mm:ss
++   #    传输时间时区
++   time-zone: GMT+8
++   generator:
++     #      使number转化为是string，默认保留两位小数
++     write-numbers-as-strings: true
++
++   mvc:
++     format:
++       #      将前端传过来的时间格式化
++       date: yyyy-MM-dd HH:mm:ss
++
++
++mybatis-plus:
++  configuration:
++    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql查询记录
++  type-aliases-package: com.macro.ob.pojo  #实体别名
++  mapper-locations: classpath*:mapper/**/*.xml  #映射文件位置
++
++pagehelper:
++  # dialect: ①
++  # 分页插件会自动检测当前的数据库链接，自动选择合适的分页方式（可以不设置）
++  helper-dialect: mysql
++  # 上面数据库设置后，下面的设置为true不会改变上面的结果（默认为true）
++  auto-dialect: true
++  page-size-zero: false # ②
++  reasonable: true # ③
++  # 默认值为 false，该参数对使用 RowBounds 作为分页参数时有效。（一般用不着）
++  offset-as-page-num: false
++  # 默认值为 false，RowBounds是否进行count查询（一般用不着）
++  row-bounds-with-count: false
++  #params: ④
++  #support-methods-arguments: 和params配合使用，具体可以看下面的讲解
++  # 默认值为 false。设置为 true 时，允许在运行时根据多数据源自动识别对应方言的分页
++  auto-runtime-dialect: false # ⑤
++  # 与auto-runtime-dialect配合使用
++  close-conn: true
++  # 用于控制默认不带 count 查询的方法中，是否执行 count 查询，这里设置为true后，total会为-1
++  default-count: false
+\ No newline at end of file
+Index: src/main/resources/mapper/DealerMapper.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/resources/mapper/DealerMapper.xml b/src/main/resources/mapper/DealerMapper.xml
+new file mode 100644
+--- /dev/null	(date 1662019327969)
++++ b/src/main/resources/mapper/DealerMapper.xml	(date 1662019327969)
+@@ -0,0 +1,36 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<!DOCTYPE mapper
++        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
++        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
++<mapper namespace="com.macro.ocp.mapper.DealerMapper">
++
++    <resultMap id="BaseResultMap" type="com.macro.ocp.pojo.Dealer">
++            <id property="dealerCode" column="dealer_code" jdbcType="INTEGER"/>
++            <result property="dealerName" column="dealer_name" jdbcType="VARCHAR"/>
++            <result property="dealerAbbreviation" column="dealer_abbreviation" jdbcType="VARCHAR"/>
++            <result property="organizationName" column="organization_name" jdbcType="VARCHAR"/>
++            <result property="dealerCategory" column="dealer_category" jdbcType="VARCHAR"/>
++            <result property="status" column="status" jdbcType="VARCHAR"/>
++            <result property="creditLine" column="credit_line" jdbcType="DECIMAL"/>
++            <result property="shipmentQuota" column="shipment_quota" jdbcType="DECIMAL"/>
++            <result property="ocpActualBalance" column="ocp_actual_balance" jdbcType="DECIMAL"/>
++            <result property="tradeBookBalance" column="trade_book_balance" jdbcType="DECIMAL"/>
++            <result property="ispremium" column="ispremium" jdbcType="TINYINT"/>
++            <result property="deductionProportion" column="deduction_proportion" jdbcType="DECIMAL"/>
++            <result property="alertAmount" column="alert_amount" jdbcType="DECIMAL"/>
++            <result property="paidStockDeposit" column="paid_stock_deposit" jdbcType="DECIMAL"/>
++            <result property="accountCode" column="account_code" jdbcType="INTEGER"/>
++            <result property="isdelete" column="isdelete" jdbcType="TINYINT"/>
++            <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
++            <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
++    </resultMap>
++
++    <sql id="Base_Column_List">
++        dealer_code,dealer_name,dealer_abbreviation,
++        organization_name,dealer_category,status,
++        credit_line,shipment_quota,ocp_actual_balance,
++        trade_book_balance,ispremium,deduction_proportion,
++        alert_amount,paid_stock_deposit,account_code,
++        isdelete,created_time,updated_time
++    </sql>
++</mapper>
+Index: src/main/java/com/macro/ocp/service/DealerService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/service/DealerService.java b/src/main/java/com/macro/ocp/service/DealerService.java
+new file mode 100644
+--- /dev/null	(date 1662019327967)
++++ b/src/main/java/com/macro/ocp/service/DealerService.java	(date 1662019327967)
+@@ -0,0 +1,11 @@
++package com.macro.ocp.service;
++
++
++/**
++* @author Admin
++* @description 针对表【dealer(经销商)】的数据库操作Service
++* @createDate 2022-09-01 14:15:20
++*/
++public interface DealerService{
++
++}
+Index: src/main/java/com/macro/ocp/mapper/ProductMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.macro.ocp.mapper;\r\n\r\n\r\nimport com.baomidou.mybatisplus.core.mapper.BaseMapper;\r\n\r\n/**\r\n* @author meng\r\n* @description 针对表【product(产品表)】的数据库操作Mapper\r\n* @createDate 2022-09-01 15:27:40\r\n* @Entity com.macro.ocp.pojo.Product\r\n*/\r\npublic interface ProductMapper extends BaseMapper {\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/mapper/ProductMapper.java b/src/main/java/com/macro/ocp/mapper/ProductMapper.java
+--- a/src/main/java/com/macro/ocp/mapper/ProductMapper.java	(revision 675ec0c6da6c88489b97e6496fe49b6f9110258d)
++++ b/src/main/java/com/macro/ocp/mapper/ProductMapper.java	(date 1662019327966)
+@@ -1,5 +1,6 @@
+ package com.macro.ocp.mapper;
+ 
++<<<<<<< HEAD
+ 
+ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+ 
+@@ -10,6 +11,18 @@
+ * @Entity com.macro.ocp.pojo.Product
+ */
+ public interface ProductMapper extends BaseMapper {
++=======
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import com.macro.ocp.pojo.Product;
++
++/**
++* @author Admin
++* @description 针对表【product(产品表)】的数据库操作Mapper
++* @createDate 2022-09-01 14:44:42
++* @Entity com.macro.ocp.pojo.Product
++*/
++public interface ProductMapper extends BaseMapper<Product> {
++>>>>>>> 176aa4f5608569a31d40acd13f21fd55ffec9320
+ 
+ 
+ }
+Index: src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.macro.ocp.service.impl;\r\n\r\nimport com.macro.ocp.service.ProductService;\r\nimport org.springframework.stereotype.Service;\r\n\r\n/**\r\n* @author meng\r\n* @description 针对表【product(产品表)】的数据库操作Service实现\r\n* @createDate 2022-09-01 15:27:40\r\n*/\r\n@Service\r\npublic class ProductServiceImpl implements ProductService{\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java b/src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java
+--- a/src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java	(revision 675ec0c6da6c88489b97e6496fe49b6f9110258d)
++++ b/src/main/java/com/macro/ocp/service/impl/ProductServiceImpl.java	(date 1662019327969)
+@@ -4,9 +4,15 @@
+ import org.springframework.stereotype.Service;
+ 
+ /**
++<<<<<<< HEAD
+ * @author meng
+ * @description 针对表【product(产品表)】的数据库操作Service实现
+ * @createDate 2022-09-01 15:27:40
++=======
++* @author Admin
++* @description 针对表【product(产品表)】的数据库操作Service实现
++* @createDate 2022-09-01 14:44:42
++>>>>>>> 176aa4f5608569a31d40acd13f21fd55ffec9320
+ */
+ @Service
+ public class ProductServiceImpl implements ProductService{
+Index: src/main/java/com/macro/ocp/service/ProductService.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.macro.ocp.service;\r\n\r\n\r\n/**\r\n* @author meng\r\n* @description 针对表【product(产品表)】的数据库操作Service\r\n* @createDate 2022-09-01 15:27:40\r\n*/\r\npublic interface ProductService{\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/service/ProductService.java b/src/main/java/com/macro/ocp/service/ProductService.java
+--- a/src/main/java/com/macro/ocp/service/ProductService.java	(revision 675ec0c6da6c88489b97e6496fe49b6f9110258d)
++++ b/src/main/java/com/macro/ocp/service/ProductService.java	(date 1662019327967)
+@@ -2,10 +2,18 @@
+ 
+ 
+ /**
++<<<<<<< HEAD
+ * @author meng
+ * @description 针对表【product(产品表)】的数据库操作Service
+ * @createDate 2022-09-01 15:27:40
+ */
+ public interface ProductService{
++=======
++* @author zhangkein
++* @description 针对表【product(产品表)】的数据库操作Service
++* @createDate 2022-09-01 14:44:42
++*/
++public interface ProductService {
++>>>>>>> 176aa4f5608569a31d40acd13f21fd55ffec9320
+ 
+ }
+Index: ../OB/pom.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../OB/pom.xml b/../OB/pom.xml
+new file mode 100644
+--- /dev/null	(date 1662019327959)
++++ b/../OB/pom.xml	(date 1662019327959)
+@@ -0,0 +1,110 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
++    <modelVersion>4.0.0</modelVersion>
++
++    <parent>
++        <groupId>org.springframework.boot</groupId>
++        <artifactId>spring-boot-starter-parent</artifactId>
++        <version>2.7.3</version>
++        <relativePath/> <!-- lookup parent from repository -->
++    </parent>
++
++    <groupId>com.macro.ob</groupId>
++    <artifactId>OB</artifactId>
++    <version>1.0.0</version>
++
++    <properties>
++        <maven.compiler.source>11</maven.compiler.source>
++        <maven.compiler.target>11</maven.compiler.target>
++    </properties>
++
++    <dependencies>
++        <!--        springweb start启动器-->
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-starter-web</artifactId>
++        </dependency>
++
++        <!--        devtools工具包-->
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-devtools</artifactId>
++            <scope>runtime</scope>
++            <optional>true</optional>
++        </dependency>
++
++        <!--        process工具   -->
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-configuration-processor</artifactId>
++            <optional>true</optional>
++        </dependency>
++
++        <!--        lombox插件-->
++        <dependency>
++            <groupId>org.projectlombok</groupId>
++            <artifactId>lombok</artifactId>
++            <optional>true</optional>
++        </dependency>
++
++        <!--        测试启动器-->
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-starter-test</artifactId>
++            <scope>test</scope>
++        </dependency>
++
++        <!--        mysql -->
++        <dependency>
++            <groupId>mysql</groupId>
++            <artifactId>mysql-connector-java</artifactId>
++            <scope>runtime</scope>
++        </dependency>
++
++        <!--SpringBoot-Redis缓存依赖 -->
++        <dependency>
++            <groupId>org.springframework.boot</groupId>
++            <artifactId>spring-boot-starter-data-redis</artifactId>
++        </dependency>
++
++        <!-- mybatis-plus -->
++        <dependency>
++            <groupId>com.baomidou</groupId>
++            <artifactId>mybatis-plus-boot-starter</artifactId>
++            <version>3.5.1</version>
++        </dependency>
++
++        <!-- 分页插件 -->
++        <dependency>
++            <groupId>com.github.pagehelper</groupId>
++            <artifactId>pagehelper-spring-boot-starter</artifactId>
++            <version>1.4.1</version>
++        </dependency>
++    </dependencies>
++
++    <build>
++        <plugins>
++            <plugin>
++                <groupId>org.springframework.boot</groupId>
++                <artifactId>spring-boot-maven-plugin</artifactId>
++                <version>2.7.3</version>
++                <configuration>
++                    <excludes>
++                        <exclude>
++                            <groupId>org.projectlombok</groupId>
++                            <artifactId>lombok</artifactId>
++                        </exclude>
++                    </excludes>
++                </configuration>
++            </plugin>
++
++            <plugin>
++                <groupId>org.apache.maven.plugins</groupId>
++                <artifactId>maven-resources-plugin</artifactId>
++                <version>3.1.0</version>
++            </plugin>
++        </plugins>
++    </build>
++</project>
+\ No newline at end of file
+Index: src/main/java/com/macro/ocp/pojo/Dealer.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/pojo/Dealer.java b/src/main/java/com/macro/ocp/pojo/Dealer.java
+new file mode 100644
+--- /dev/null	(date 1662019327966)
++++ b/src/main/java/com/macro/ocp/pojo/Dealer.java	(date 1662019327966)
+@@ -0,0 +1,114 @@
++package com.macro.ocp.pojo;
++
++import lombok.AllArgsConstructor;
++import lombok.Data;
++import lombok.NoArgsConstructor;
++import lombok.ToString;
++import org.springframework.boot.context.properties.ConfigurationProperties;
++import org.springframework.stereotype.Component;
++
++import java.io.Serializable;
++import java.math.BigDecimal;
++import java.util.Date;
++
++/**
++ * 经销商
++ * @TableName dealer
++ */
++@Component
++@Data
++@NoArgsConstructor
++@AllArgsConstructor
++@ToString
++@ConfigurationProperties(prefix = "dealer")
++public class Dealer implements Serializable {
++    /**
++     * 经销商编码
++     */
++    private Integer dealerCode;
++
++    /**
++     * 经销商名称
++     */
++    private String dealerName;
++
++    /**
++     * 经销商简称
++     */
++    private String dealerAbbreviation;
++
++    /**
++     * 机构名称
++     */
++    private String organizationName;
++
++    /**
++     * 经销商类别
++     */
++    private String dealerCategory;
++
++    /**
++     * 状态
++     */
++    private String status;
++
++    /**
++     * 信用额度
++     */
++    private BigDecimal creditLine;
++
++    /**
++     * 发货额度
++     */
++    private BigDecimal shipmentQuota;
++
++    /**
++     * ocp实际发货余额
++     */
++    private BigDecimal ocpActualBalance;
++
++    /**
++     * 商折余额
++     */
++    private BigDecimal tradeBookBalance;
++
++    /**
++     * 是否溢价
++     */
++    private Integer ispremium;
++
++    /**
++     * 扣款比例
++     */
++    private BigDecimal deductionProportion;
++
++    /**
++     * 预警金额
++     */
++    private BigDecimal alertAmount;
++
++    /**
++     * 已缴备货保证金
++     */
++    private BigDecimal paidStockDeposit;
++
++    /**
++     * 经销商总账号编码
++     */
++    private Integer accountCode;
++
++    /**
++     * 是否删除
++     */
++    private Integer isdelete;
++
++    /**
++     * 创建时间
++     */
++    private Date createdTime;
++
++    /**
++     * 更新时间
++     */
++    private Date updatedTime;
++}
+\ No newline at end of file
+Index: src/main/java/com/macro/ocp/mapper/DealerMapper.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/mapper/DealerMapper.java b/src/main/java/com/macro/ocp/mapper/DealerMapper.java
+new file mode 100644
+--- /dev/null	(date 1662019327965)
++++ b/src/main/java/com/macro/ocp/mapper/DealerMapper.java	(date 1662019327965)
+@@ -0,0 +1,15 @@
++package com.macro.ocp.mapper;
++
++import com.baomidou.mybatisplus.core.mapper.BaseMapper;
++import com.macro.ocp.pojo.Dealer;
++
++/**
++* @author Admin
++* @description 针对表【dealer(经销商)】的数据库操作Mapper
++* @createDate 2022-09-01 14:15:20
++* @Entity com.macro.ocp.pojo.Dealer
++*/
++public interface DealerMapper extends BaseMapper<Dealer> {
++
++
++}
+Index: src/main/java/com/macro/ocp/service/impl/DealerServiceImpl.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/main/java/com/macro/ocp/service/impl/DealerServiceImpl.java b/src/main/java/com/macro/ocp/service/impl/DealerServiceImpl.java
+new file mode 100644
+--- /dev/null	(date 1662019327968)
++++ b/src/main/java/com/macro/ocp/service/impl/DealerServiceImpl.java	(date 1662019327968)
+@@ -0,0 +1,14 @@
++package com.macro.ocp.service.impl;
++
++import com.macro.ocp.service.DealerService;
++import org.springframework.stereotype.Service;
++
++/**
++* @author Admin
++* @description 针对表【dealer(经销商)】的数据库操作Service实现
++* @createDate 2022-09-01 14:15:20
++*/
++@Service
++public class DealerServiceImpl implements DealerService{
++
++}
+Index: ../OB/src/main/java/com/macro/ob/OBApplication.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../OB/src/main/java/com/macro/ob/OBApplication.java b/../OB/src/main/java/com/macro/ob/OBApplication.java
+new file mode 100644
+--- /dev/null	(date 1662019327961)
++++ b/../OB/src/main/java/com/macro/ob/OBApplication.java	(date 1662019327961)
+@@ -0,0 +1,15 @@
++package com.macro.ob;
++
++import org.mybatis.spring.annotation.MapperScan;
++import org.springframework.boot.SpringApplication;
++import org.springframework.boot.autoconfigure.SpringBootApplication;
++import org.springframework.cache.annotation.EnableCaching;
++
++@EnableCaching
++@MapperScan(basePackages = "com.macro.ob.mapper")
++@SpringBootApplication
++public class OBApplication {
++    public static void main(String[] args) {
++        SpringApplication.run(OBApplication.class,args);
++    }
++}
