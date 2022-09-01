@@ -23,7 +23,7 @@
             <result property="ticketPrice" column="ticket_price" jdbcType="DECIMAL"/>
             <result property="standardPrice" column="standard_price" jdbcType="DECIMAL"/>
             <result property="premiumRatio" column="premium_ratio" jdbcType="DECIMAL"/>
-            <result property="premiumLimit" column="premium_limit" jdbcType="VARCHAR"/>
+            <result property="premiumLimit" column="premium_limit" jdbcType="DECIMAL"/>
             <result property="effectiveDate" column="effective_date" jdbcType="TIMESTAMP"/>
             <result property="expirationTime" column="expiration_time" jdbcType="TIMESTAMP"/>
             <result property="modifyTime" column="modify_time" jdbcType="TIMESTAMP"/>
