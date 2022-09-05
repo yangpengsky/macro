@@ -1,8 +1,15 @@
 package com.macro.ob.service.impl;
 
 
+import com.macro.ob.mapper.FactoryInventoryMapper;
+import com.macro.ob.pojo.FactoryInventory;
 import com.macro.ob.service.FactoryInventoryService;
 import org.springframework.stereotype.Service;
+import javax.annotation.Resource;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
 * @author 周学林
@@ -11,5 +18,14 @@ import org.springframework.stereotype.Service;
 */
 @Service
 public class FactoryInventoryServiceImpl implements FactoryInventoryService{
+    @Resource
+    private FactoryInventoryMapper factoryInventoryMapper;
 
+    @Override
+    public Map<String, Object> FactoryInventorySelect(FactoryInventory fa) {
+        Map<String,Object>map=new HashMap<>();
+        List<FactoryInventory> list=factoryInventoryMapper.FactoryInventorySelect(fa);
+        map.put("data",list);
+        return map;
+    }
 }

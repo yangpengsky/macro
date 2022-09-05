@@ -31,7 +31,29 @@
         gas_real_quantity,gas_occupation_quantity,created_time,
         updated_time
     </sql>
-    <select id="FactoryInventorySelect" parameterType="factoryInventory" resultType="factoryInventory">
+    <select id="FactoryInventorySelect" parameterType="com.macro.ob.pojo.FactoryInventory" resultType="com.macro.ob.pojo.FactoryInventory">
+        select product_code,product_name,product_category,
+               warehouse_name,warehouse_code,available_quantity,
+               occupation_quantity,real_quantity,kitchen_real_quantity,
+               kitchen_occupation_quantity,kitchen_subsidiary_real,kitchen_subsidiary_quantity,
+               gas_real_quantity,gas_occupation_quantity from factory_inventory
+        where
+        <if test="productCode != null">
+             product_code=#{productCode}
+        </if>
+
+        <if test="productName != null">
+            AND product_name=#{productName}
+        </if>
+        <if test="productCategory != null">
+            AND product_category=#{productCategory}
+        </if>
+        <if test="warehouseName != null">
+            AND warehouse_name=#{warehouseName}
+        </if>
+        <if test="warehouseCode != null">
+            AND warehouse_code=#{warehouseCode}
+        </if>
 
     </select>
 </mapper>

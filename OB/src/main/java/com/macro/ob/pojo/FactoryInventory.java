@@ -3,6 +3,8 @@ package com.macro.ob.pojo;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -20,10 +22,12 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 @ConfigurationProperties(prefix = "factoryinventory")
+
 public class FactoryInventory implements Serializable {
     /**
      * 产品编码
      */
+
     private Integer productCode;
 
     /**

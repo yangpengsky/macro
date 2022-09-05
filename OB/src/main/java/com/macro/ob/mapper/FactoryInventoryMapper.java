@@ -3,6 +3,8 @@ package com.macro.ob.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.macro.ob.pojo.FactoryInventory;
 
+import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 
@@ -13,6 +15,7 @@ import java.util.Map;
 * @Entity com.macro.ob.pojo.FactoryInventory
 */
 public interface FactoryInventoryMapper extends BaseMapper<FactoryInventory> {
-      Map<String,Object> FactoryInventorySelect();
+
+      List<FactoryInventory> FactoryInventorySelect(FactoryInventory fa);
 
 }
