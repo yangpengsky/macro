@@ -36,6 +36,11 @@ public class OperatingAccount implements Serializable {
     private String userName;
 
     /**
+     * 密码
+     */
+    private String pwd;
+
+    /**
      * 真实姓名
      */
     private String name;
@@ -84,5 +89,19 @@ public class OperatingAccount implements Serializable {
      * 更新时间
      */
     private Date updatedTime;
+
+    /**
+     *  定义一个运营账号编号数组
+     */
+    private Integer[] operationAccountIds;
+
+    /**
+     * 定义分页的页数
+     */
+    private Integer pageNum;
+    /**
+     * 定义分页的记录条数
+     */
+    private Integer pageSize;
 
 }
