@@ -1,6 +1,7 @@
 package com.macro.ob.service;
 
 import com.macro.ob.pojo.FactoryInventory;
+import com.macro.ob.pojo.Page;
 
 import java.util.Map;
 
@@ -10,5 +11,5 @@ import java.util.Map;
 * @createDate 2022-09-02 16:47:30
 */
 public interface FactoryInventoryService {
-    Map<String,Object> FactoryInventorySelect(FactoryInventory fa);
+    Map<String,Object> FactoryInventorySelect(FactoryInventory fa, Page page);
 }

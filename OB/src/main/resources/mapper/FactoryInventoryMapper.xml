@@ -37,23 +37,23 @@
                occupation_quantity,real_quantity,kitchen_real_quantity,
                kitchen_occupation_quantity,kitchen_subsidiary_real,kitchen_subsidiary_quantity,
                gas_real_quantity,gas_occupation_quantity from factory_inventory
-        where
+        <where>
         <if test="productCode != null">
-             product_code=#{productCode}
+            AND product_code like concat('%', #{productCode},'%')
         </if>
 
         <if test="productName != null">
-            AND product_name=#{productName}
+            AND product_name like concat('%', #{productName},'%')
         </if>
         <if test="productCategory != null">
-            AND product_category=#{productCategory}
+            AND product_category like concat('%', #{productCategory},'%')
         </if>
         <if test="warehouseName != null">
-            AND warehouse_name=#{warehouseName}
+            AND warehouse_name like concat('%', #{warehouseName},'%')
         </if>
         <if test="warehouseCode != null">
-            AND warehouse_code=#{warehouseCode}
+            AND warehouse_code like concat('%', #{warehouseCode},'%')
         </if>
-
+        </where>
     </select>
 </mapper>

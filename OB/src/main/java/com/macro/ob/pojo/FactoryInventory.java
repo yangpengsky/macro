@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 @AllArgsConstructor
 @NoArgsConstructor
 @ConfigurationProperties(prefix = "factoryinventory")
-
+@TableName("factory_inventory")
 public class FactoryInventory implements Serializable {
     /**
      * 产品编码

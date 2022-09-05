@@ -1,8 +1,10 @@
 package com.macro.ob.service.impl;
 
 
+import com.github.pagehelper.PageHelper;
 import com.macro.ob.mapper.FactoryInventoryMapper;
 import com.macro.ob.pojo.FactoryInventory;
+import com.macro.ob.pojo.Page;
 import com.macro.ob.service.FactoryInventoryService;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
@@ -22,10 +24,18 @@ public class FactoryInventoryServiceImpl implements FactoryInventoryService{
     private FactoryInventoryMapper factoryInventoryMapper;
 
     @Override
-    public Map<String, Object> FactoryInventorySelect(FactoryInventory fa) {
+    public Map<String, Object> FactoryInventorySelect(FactoryInventory fa, Page page) {
         Map<String,Object>map=new HashMap<>();
+        PageHelper.startPage(page.getPageNum(), page.getPageSize());
         List<FactoryInventory> list=factoryInventoryMapper.FactoryInventorySelect(fa);
-        map.put("data",list);
+       if(list.size()!=0){
+           map.put("code",true);
+           map.put("data",list);
+           map.put("flag","查看成功");
+       }else {
+           map.put("code",false);
+           map.put("flag","查看失败");
+       }
         return map;
     }
 }
