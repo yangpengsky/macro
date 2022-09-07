@@ -28,5 +28,12 @@ public interface OrdersService  {
      */
     Map<String,Object> updateOrderBy(Orders orders);
 
+    /**
+     * 查看订单详情
+     * @param orders
+     * @return
+     */
+    Map<String,Object> selectOrderByOrderCode(Orders orders);
+
 
 }

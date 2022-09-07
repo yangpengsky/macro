@@ -21,6 +21,11 @@ public class OrderController {
     private OrdersService ordersService;
 
 
+    /**
+     * 查询订单信息
+     * @param orders
+     * @return
+     */
     @PostMapping("/selectOrderIF")
     public Map<String,Object> selectOrderIF(@RequestBody Orders orders){
         System.out.println(orders);
@@ -29,10 +34,28 @@ public class OrderController {
     }
 
 
+    /**
+     * 初审核
+     * @param orders
+     * @return
+     */
     @PostMapping("/updateOrderBy")
     public Map<String,Object> updateOrderBy(@RequestBody Orders orders){
         return ordersService.updateOrderBy(orders);
     }
+
+    /**
+     * 查询订单信息
+     * @param orders
+     * @return
+     */
+    @PostMapping("/selectOrderByOrderCode")
+    public Map<String,Object> selectOrderByOrderCode(@RequestBody Orders orders){
+        System.out.println(orders.getOrderCode()+"=============");
+        return ordersService.selectOrderByOrderCode(orders);
+    }
+
+
 
 
 }

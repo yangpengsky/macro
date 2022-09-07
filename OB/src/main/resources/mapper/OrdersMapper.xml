@@ -74,7 +74,7 @@
             <if test="dealerCode != null">
                 and o.dealer_code=#{dealerCode}
             </if>
---             and order_status="提交"
+            and order_status="提交"
         </where>
         order by created_time asc
     </select>
@@ -93,6 +93,25 @@
             </foreach>
         </where>
     </update>
+
+    <select id="selectOrderByOrderCode" parameterType="orders" resultMap="BaseResultMap">
+        select order_code
+        ,order_type,order_status,
+        delivery_method,out_warehouse,
+        in_warehouse,delivery_address,receiver,
+        contact_number,remarks,o.dealer_code,
+        product_quantity,bulk_volume,aggregate_amount,
+        invoice_price,order_preliminary_audit,order_review_audit,
+        created_by,o.created_time,o.updated_by,
+        o.updated_time,o.summary_plan_code,d.dealer_name,d.organization_name
+        from macrodb.orders as o,macrodb.dealer as d
+        <where>
+            o.dealer_code=d.dealer_code
+            <if test="orderCode != null">
+                and o.order_code=#{orderCode}
+            </if>
+        </where>
+    </select>
 
 
 </mapper>

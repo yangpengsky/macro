@@ -29,4 +29,11 @@ public interface OrdersMapper extends BaseMapper<Orders> {
      */
     int updateOrderBy(Orders orders);
 
+    /**
+     * 查看订单详情
+     * @param orders
+     * @return
+     */
+    List<Orders> selectOrderByOrderCode(Orders orders);
+
 }
