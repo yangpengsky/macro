@@ -184,6 +184,18 @@ public class RequisitionInfo implements Serializable {
      */
     private String productName;
 
+    /**
+     * 产品组织
+     */
+    private String organizationName;
+
+    /**
+     * 经营单位
+     */
+    private String businessUnits;
+
+
+
 
 
 

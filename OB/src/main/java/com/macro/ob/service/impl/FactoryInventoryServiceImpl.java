@@ -22,7 +22,6 @@ import java.util.Map;
 public class FactoryInventoryServiceImpl implements FactoryInventoryService{
     @Resource
     private FactoryInventoryMapper factoryInventoryMapper;
-
     @Override
     public Map<String, Object> FactoryInventorySelect(FactoryInventory fa, Page page) {
         Map<String,Object>map=new HashMap<>();

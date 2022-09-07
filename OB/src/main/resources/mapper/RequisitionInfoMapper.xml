@@ -124,8 +124,19 @@
         from dealer
         where dealer_code=#{dealerCode}
     </select>
-    <insert id="insertName" parameterType="requisitionInfo" >
-        insert into requisition_info (in_warehouse_name,out_warehouse_name,in_organization_name,out_organization_name,dealer_name)values (#{inWarehouseName},#{outWarehouseName},#{inOrganizationName},#{outOrganizationName},#{dealerName})
+    <insert id="insertName" parameterType="requisitionInfo">
+        insert into requisition_info (created_time,requisition_code,out_organization_code,in_organization_code,
+                                      out_organization_name,in_organization_name,out_warehouse_code,
+                                      out_warehouse_name,in_warehouse_code,in_warehouse_name,initiator,
+                                      deliver_style,dealer_name,dealer_code,consignee,consignee_phone,
+                                      consignee_address,consignee_identity,requisition_total_volume,
+                                      requisition_number,send_city,organization_name,business_units,note)
+                                      values
+                                      (#{createdTime},#{requisitionCode},#{outOrganizationCode},#{inOrganizationCode},
+                                       #{outOrganizationName},#{inOrganizationName},#{outWarehouseCode},#{outWarehouseName},
+                                       #{inWarehouseCode},#{inWarehouseName},#{initiator},#{deliverStyle},#{dealerName},
+                                       #{dealerCode},#{consignee},#{consigneePhone},#{consigneeAddress},#{consigneeIdentity},
+                                       #{requisitionTotalVolume},#{requisitionNumber},#{sendCity},#{organizationName},#{businessUnits},#{note})
     </insert>
 
 </mapper>
