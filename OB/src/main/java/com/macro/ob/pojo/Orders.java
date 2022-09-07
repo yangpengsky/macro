@@ -41,7 +41,6 @@ public class Orders implements Serializable {
     private String deliveryMethod;
 
 
-
     /**
      * 出库仓库
      */
@@ -76,6 +75,11 @@ public class Orders implements Serializable {
      * 经销商账号编码
      */
     private Integer dealerCode;
+
+    /**
+     * 经销商名称
+     */
+    private String dealerName;
 
     /**
      * 总数量
@@ -151,6 +155,11 @@ public class Orders implements Serializable {
      * 运营后台订单状态编码
      */
     private String obOrderStatus;
+
+    /**
+     * 机构名称
+     */
+    private String organizationName;
 
 
 }

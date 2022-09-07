@@ -17,6 +17,7 @@
         <result property="contactNumber" column="contact_number" jdbcType="VARCHAR"/>
         <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
         <result property="dealerCode" column="dealer_code" jdbcType="INTEGER"/>
+        <result property="dealerName" column="dealer_name" jdbcType="VARCHAR"/>
         <result property="productQuantity" column="product_quantity" jdbcType="INTEGER"/>
         <result property="bulkVolume" column="bulk_volume" jdbcType="DECIMAL"/>
         <result property="aggregateAmount" column="aggregate_amount" jdbcType="DECIMAL"/>
@@ -28,6 +29,7 @@
         <result property="updatedBy" column="updated_by" jdbcType="VARCHAR"/>
         <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
         <result property="summaryPlanCode" column="summary_plan_code" jdbcType="INTEGER"/>
+        <result property="organizationName" column="organization_name" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -43,26 +45,36 @@
     </sql>
 
     <select id="selectOrderIF" parameterType="orders" resultMap="BaseResultMap">
-        select
-        <include refid="Base_Column_List"/>
-        from orders
+        select order_code
+        ,order_type,order_status,
+        delivery_method,out_warehouse,
+        in_warehouse,delivery_address,receiver,
+        contact_number,remarks,o.dealer_code,
+        product_quantity,bulk_volume,aggregate_amount,
+        invoice_price,order_preliminary_audit,order_review_audit,
+        created_by,o.created_time,o.updated_by,
+        o.updated_time,o.summary_plan_code,d.dealer_name,d.organization_name
+        from macrodb.orders as o,macrodb.dealer as d
         <where>
-            1=1
+            o.dealer_code=d.dealer_code
             <if test="dealerCode != null">
-                and dealer_code=#{dealerCode}
+                and o.dealer_code=#{dealerCode}
             </if>
 
             <if test="orderCode != null">
-                and order_code=#{orderCode}
+                and o.order_code=#{orderCode}
             </if>
             <if test="startDate != null">
-                and created_time <![CDATA[>=]]> #{startDate}
+                and o.created_time <![CDATA[>=]]> #{startDate}
             </if>
 
             <if test="endDate != null">
-                and created_time <![CDATA[<=]]> #{endDate}
+                and o.created_time <![CDATA[<=]]> #{endDate}
             </if>
-            and order_status="提交"
+            <if test="dealerCode != null">
+                and o.dealer_code=#{dealerCode}
+            </if>
+--             and order_status="提交"
         </where>
         order by created_time asc
     </select>
