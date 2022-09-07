@@ -61,6 +61,7 @@ public class RequisitionInfoServiceImpl implements RequisitionInfoService{
         requisitionInfo.setOutWarehouseName(requisitionInfoMapper.selectOutWarehouseName(requisitionInfo));
         requisitionInfo.setInOrganizationName(requisitionInfoMapper.selectInOrganizationName(requisitionInfo));
         requisitionInfo.setOutOrganizationName(requisitionInfoMapper.selectOutOrganizationName(requisitionInfo));
+        requisitionInfo.setDealerName(requisitionInfoMapper.selectDealerName(requisitionInfo));
         Integer num=requisitionInfoMapper.insertName(requisitionInfo);
         map.put("number",num);
         return map;

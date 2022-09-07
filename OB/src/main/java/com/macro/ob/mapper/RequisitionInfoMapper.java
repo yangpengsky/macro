@@ -21,6 +21,7 @@ public interface RequisitionInfoMapper extends BaseMapper<RequisitionInfo> {
    String selectOutWarehouseName(RequisitionInfo requisitionInfo);
    String selectInOrganizationName(RequisitionInfo requisitionInfo);
    String selectOutOrganizationName(RequisitionInfo requisitionInfo);
+   String selectDealerName(RequisitionInfo requisitionInfo);
    Integer insertName(RequisitionInfo requisitionInfo);
 
 }

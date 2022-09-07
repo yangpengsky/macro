@@ -110,17 +110,22 @@
         where warehouse_code=#{outWarehouseCode};
     </select>
     <select id="selectInOrganizationName" parameterType="requisitionInfo" resultType="string">
-        select warehouse_name
-        from dealer
-        where dealer_code=#{inOrganizationcode};
+        select organization_name
+        from organization
+        where category_code=#{inOrganizationCode}
     </select>
     <select id="selectOutOrganizationName" parameterType="requisitionInfo" resultType="string">
-        select warehouse_name
+        select organization_name
+        from organization
+        where category_code=#{outOrganizationCode}
+    </select>
+    <select id="selectDealerName" resultType="string" parameterType="requisitionInfo" >
+        select dealer_name
         from dealer
-        where dealer_code=#{outOrganizationCode};
+        where dealer_code=#{dealerCode}
     </select>
     <insert id="insertName" parameterType="requisitionInfo" >
-        insert into requisition_info (in_warehouse_name,out_warehouse_name)values (#{inWarehouseName},#{outWarehouseName,#{inOrganizationName},#{outOrganizationName})
+        insert into requisition_info (in_warehouse_name,out_warehouse_name,in_organization_name,out_organization_name,dealer_name)values (#{inWarehouseName},#{outWarehouseName},#{inOrganizationName},#{outOrganizationName},#{dealerName})
     </insert>
 
 </mapper>
