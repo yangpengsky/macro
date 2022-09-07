@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.macro.ocp.mapper.ProductMapper">
+<mapper namespace="com.macro.ob.mapper.ProductMapper">
 
-    <resultMap id="BaseResultMap" type="com.macro.ocp.pojo.Product">
+    <resultMap id="BaseResultMap" type="com.macro.ob.pojo.Product">
             <id property="productCode" column="product_code" jdbcType="INTEGER"/>
             <result property="productLine" column="product_line" jdbcType="VARCHAR"/>
             <result property="productName" column="product_name" jdbcType="VARCHAR"/>
@@ -64,18 +64,28 @@
         shipping_warehouse
     </sql>
 
-<!--OCP经销商系统：按条件查询产品信息-->
-    <select id="selectByCondition" resultMap="BaseResultMap">
-        select product_code,product_model,product_name,category_name,bar_code,uom_name,specifications,retail_price,ticket_price
+    <!--OB经营后台：按条件查询产品信息-->
+    <select id="selectAllByCondition" resultMap="BaseResultMap">
+        select product_code,product_line,product_name,
+        product_abbreviation,uom_code,uom_name,
+        specifications,category_code,category_name,
+        product_model,aftersales_model,product_color,
+        bar_code,retail_price,pickup_price,
+        ticket_price,standard_price,premium_ratio,
+        premium_limit,effective_date,expiration_time,
+        create_by,modify_time,modify_by,sales_attributes,
+        gas_species,product_attributes,volume,
+        weight,length,width,height,isnew_product,issales,
+        isstop_production,issuspend_production,create_time,
+        update_time,remarks,product_status,shipping_warehouse
         from product
         <where>
             <if test="productCode !=null">
-                product_code=#{productCode}
+                 product_code=#{productCode}
             </if>
             <if test="productName !=null">
                 and product_name like CONCAT("%",#{productName},"%")
                 or getPY(product_name) like CONCAT(#{productName},"%")
---                 or to_pinyin(product_name) like CONCAT(#{productName},"%")
             </if>
             <if test="categoryName !=null">
                 and category_name like CONCAT("%",#{categoryName},"%")
@@ -84,18 +94,43 @@
             <if test="productModel !=null">
                 and product_model like CONCAT("%",#{productModel},"%")
             </if>
+            <if test="categoryCode !=null">
+                and category_code=#{categoryCode}
+            </if>
+            <if test="productStatus !=null">
+                and product_status=#{productStatus}
+            </if>
+            <if test="isnewProduct !=null">
+                and isnew_product=#{isnewProduct}
+            </if>
+            <if test="issales !=null">
+                and issales=#{issales}
+            </if>
+            <if test="isstopProduction !=null">
+                and isstop_production=#{isstopProduction}
+            </if>
         </where>
     </select>
 
-<!--OCP经销商系统：通过产品编号查询产品信息-->
-    <select id="selectByProductCode" resultMap="BaseResultMap">
-        select product_code,product_model,product_name,category_name,retail_price,pickup_price,ticket_price,uom_name,specifications,weight,volume,length,width,shipping_warehouse,expiration_time,aftersales_model
-        from product
-        <where>
-            <if test="productCode">
-            product_code=#{productCode}
-            </if>
-        </where>
+    <!--OB经营后台：溢价维护，修改溢价-->
+    <update id="updateAllByProductCode" parameterType="com.macro.ob.pojo.Product">
+        update product
+        <trim prefix="set" suffixOverrides=",">
+            <if test="premiumRatio  != null">premium_ratio=#{premiumRatio},</if>
+            <if test="premiumLimit  != null">premium_limit=#{premiumLimit}</if>
+            <if test="effectiveDate  != null">effective_date=#{effectiveDate},</if>
+            <if test="expirationTime  != null">expiration_time=#{expirationTime}</if>
+        </trim>
+        where product_code=#{productCode}
+    </update>
+
+    <!--OB运营后台：查看溢价历史记录-->
+    <select id="selectRecordsByChange" resultMap="BaseResultMap">
+        select premium_ratio,premium_limit,effective_date,
+               expiration_time,create_time,create_by,
+               modify_time,modify_by
+        from product,operating_account
+        where product_code=#{productCode}
     </select>
 
 </mapper>

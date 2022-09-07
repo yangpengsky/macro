@@ -1,5 +1,4 @@
-package com.macro.ocp.pojo;
-
+package com.macro.ob.pojo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,7 +13,7 @@ import java.util.Date;
 /**
  * 产品表
  * @TableName product
- * @Author huangguo
+ * @author huangguo
  */
 @Component
 @Data
@@ -22,7 +21,8 @@ import java.util.Date;
 @AllArgsConstructor
 @ConfigurationProperties(prefix = "product")
 public class Product implements Serializable {
-    private static final long serialVersionUID = -1295177846520338890L;
+
+    private static final long serialVersionUID = 5215552995520692566L;
     /**
      * 产品编码
      */
@@ -232,6 +232,8 @@ public class Product implements Serializable {
      * 显示条数
      */
     private Integer pageSize;
+
+
 
 
 }
