@@ -16,6 +16,9 @@ import java.util.Map;
 * @createDate 2022-09-02 16:47:30
 * @Entity com.macro.ob.pojo.FactoryInventory
 */
+/**
+ *工厂库存列表查询
+ */
 @Mapper
 public interface FactoryInventoryMapper extends BaseMapper<FactoryInventory> {
       List<FactoryInventory> FactoryInventorySelect(FactoryInventory fa);

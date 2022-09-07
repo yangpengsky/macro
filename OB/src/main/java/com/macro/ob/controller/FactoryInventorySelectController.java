@@ -11,6 +11,9 @@ import java.util.Map;
 public class FactoryInventorySelectController {
     @Resource
     private FactoryInventoryService factoryInventoryService;
+    /**
+     *查询工厂库存
+     */
     @RequestMapping("/FactoryInventorySelect")
     public Map<String,Object> FactoryInventorySelect(FactoryInventory fa,Page page){
         return factoryInventoryService.FactoryInventorySelect(fa,page);

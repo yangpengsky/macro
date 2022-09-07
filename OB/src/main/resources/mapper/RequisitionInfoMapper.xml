@@ -5,34 +5,36 @@
 <mapper namespace="com.macro.ob.mapper.RequisitionInfoMapper">
 
     <resultMap id="BaseResultMap" type="com.macro.ob.pojo.RequisitionInfo">
-            <id property="requisitionCode" column="requisition_code" jdbcType="INTEGER"/>
-            <result property="requisitionType" column="requisition_type" jdbcType="VARCHAR"/>
-            <result property="outWarehouseCode" column="out_warehouse_code" jdbcType="INTEGER"/>
-            <result property="outWarehouseName" column="out_warehouse_name" jdbcType="VARCHAR"/>
-            <result property="inWarehouseCode" column="in_warehouse_code" jdbcType="INTEGER"/>
-            <result property="inWarehouseName" column="in_warehouse_name" jdbcType="VARCHAR"/>
-            <result property="productCode" column="product_code" jdbcType="INTEGER"/>
-            <result property="requisitionNumber" column="requisition_number" jdbcType="INTEGER"/>
-            <result property="productUnit" column="product_unit" jdbcType="VARCHAR"/>
-            <result property="outOrganizationCode" column="out_organization_code" jdbcType="INTEGER"/>
-            <result property="inOrganizationCode" column="in_organization_code" jdbcType="INTEGER"/>
-            <result property="outOrganizationName" column="out_organization_name" jdbcType="VARCHAR"/>
-            <result property="inOrganizationName" column="in_organization_name" jdbcType="VARCHAR"/>
-            <result property="initiator" column="initiator" jdbcType="VARCHAR"/>
-            <result property="deliverStyle" column="deliver_style" jdbcType="VARCHAR"/>
-            <result property="dealerCode" column="dealer_code" jdbcType="INTEGER"/>
-            <result property="dealerName" column="dealer_name" jdbcType="VARCHAR"/>
-            <result property="consignee" column="consignee" jdbcType="VARCHAR"/>
-            <result property="consigneePhone" column="consignee_phone" jdbcType="VARCHAR"/>
-            <result property="consigneeAddress" column="consignee_address" jdbcType="VARCHAR"/>
-            <result property="consigneeIdentity" column="consignee_identity" jdbcType="VARCHAR"/>
-            <result property="requisitionTotalVolume" column="requisition_total_volume" jdbcType="DECIMAL"/>
-            <result property="sendCity" column="send_city" jdbcType="VARCHAR"/>
-            <result property="note" column="note" jdbcType="VARCHAR"/>
-            <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
-            <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
-            <result property="orderCode" column="order_code" jdbcType="INTEGER"/>
-            <result property="money" column="money" jdbcType="DECIMAL"/>
+        <id property="requisitionCode" column="requisition_code" jdbcType="INTEGER"/>
+        <result property="requisitionType" column="requisition_type" jdbcType="VARCHAR"/>
+        <result property="outWarehouseCode" column="out_warehouse_code" jdbcType="INTEGER"/>
+        <result property="outWarehouseName" column="out_warehouse_name" jdbcType="VARCHAR"/>
+        <result property="inWarehouseCode" column="in_warehouse_code" jdbcType="INTEGER"/>
+        <result property="inWarehouseName" column="in_warehouse_name" jdbcType="VARCHAR"/>
+        <result property="productCode" column="product_code" jdbcType="INTEGER"/>
+        <result property="requisitionNumber" column="requisition_number" jdbcType="INTEGER"/>
+        <result property="productUnit" column="product_unit" jdbcType="VARCHAR"/>
+        <result property="outOrganizationCode" column="out_organization_code" jdbcType="INTEGER"/>
+        <result property="inOrganizationCode" column="in_organization_code" jdbcType="INTEGER"/>
+        <result property="outOrganizationName" column="out_organization_name" jdbcType="VARCHAR"/>
+        <result property="inOrganizationName" column="in_organization_name" jdbcType="VARCHAR"/>
+        <result property="initiator" column="initiator" jdbcType="VARCHAR"/>
+        <result property="deliverStyle" column="deliver_style" jdbcType="VARCHAR"/>
+        <result property="dealerCode" column="dealer_code" jdbcType="INTEGER"/>
+        <result property="dealerName" column="dealer_name" jdbcType="VARCHAR"/>
+        <result property="consignee" column="consignee" jdbcType="VARCHAR"/>
+        <result property="consigneePhone" column="consignee_phone" jdbcType="VARCHAR"/>
+        <result property="consigneeAddress" column="consignee_address" jdbcType="VARCHAR"/>
+        <result property="consigneeIdentity" column="consignee_identity" jdbcType="VARCHAR"/>
+        <result property="requisitionTotalVolume" column="requisition_total_volume" jdbcType="DECIMAL"/>
+        <result property="sendCity" column="send_city" jdbcType="VARCHAR"/>
+        <result property="note" column="note" jdbcType="VARCHAR"/>
+        <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+        <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+        <result property="orderCode" column="order_code" jdbcType="INTEGER"/>
+        <result property="money" column="money" jdbcType="DECIMAL"/>
+        <result property="organizationName" column="organization_name" jdbcType="VARCHAR"/>
+        <result property="businessUnits" column="business_units" jdbcType="VARCHAR"/>
     </resultMap>
 
     <sql id="Base_Column_List">
@@ -90,12 +92,16 @@
 
     </select>
     <select id="ViewDetails" resultType="requisitionInfo" parameterType="requisitionInfo">
-        select created_time,requisition_code,out_organization_code,in_organization_code,
-               out_organization_name,in_organization_name,out_warehouse_code,
-               out_warehouse_name,in_warehouse_code,in_warehouse_name,initiator,
-               deliver_style,dealer_code,dealer_name,consignee,consignee_phone,
-               consignee_address,consignee_identity,requisition_total_volume,
-               requisition_number,send_city,organization_name,business_units,note
+        select requisition_code,requisition_type,out_warehouse_code,
+               out_warehouse_name,in_warehouse_code,in_warehouse_name,
+               product_code,requisition_number,product_unit,
+               out_organization_code,in_organization_code,out_organization_name,
+               in_organization_name,initiator,deliver_style,
+               dealer_code,dealer_name,consignee,
+               consignee_phone,consignee_address,consignee_identity,
+               requisition_total_volume,send_city,note,
+               created_time,updated_time,order_code,
+               money,organization_name,business_units
                from  requisition_info
                where requisition_code=#{requisitionCode}
     </select>
@@ -124,19 +130,25 @@
         from dealer
         where dealer_code=#{dealerCode}
     </select>
-    <insert id="insertName" parameterType="requisitionInfo">
-        insert into requisition_info (created_time,requisition_code,out_organization_code,in_organization_code,
-                                      out_organization_name,in_organization_name,out_warehouse_code,
-                                      out_warehouse_name,in_warehouse_code,in_warehouse_name,initiator,
-                                      deliver_style,dealer_name,dealer_code,consignee,consignee_phone,
-                                      consignee_address,consignee_identity,requisition_total_volume,
-                                      requisition_number,send_city,organization_name,business_units,note)
+    <insert id="makeTransferOrders" parameterType="requisitionInfo">
+        insert into requisition_info (requisition_code,requisition_type,out_warehouse_code,
+                                      out_warehouse_name,in_warehouse_code,in_warehouse_name,
+                                      product_code,requisition_number,product_unit,
+                                      out_organization_code,in_organization_code,out_organization_name,
+                                      in_organization_name,initiator,deliver_style,
+                                      dealer_code,dealer_name,consignee,
+                                      consignee_phone,consignee_address,consignee_identity,
+                                      requisition_total_volume,send_city,note,
+                                      created_time,updated_time,order_code,
+                                      money,organization_name,business_units)
                                       values
-                                      (#{createdTime},#{requisitionCode},#{outOrganizationCode},#{inOrganizationCode},
-                                       #{outOrganizationName},#{inOrganizationName},#{outWarehouseCode},#{outWarehouseName},
-                                       #{inWarehouseCode},#{inWarehouseName},#{initiator},#{deliverStyle},#{dealerName},
-                                       #{dealerCode},#{consignee},#{consigneePhone},#{consigneeAddress},#{consigneeIdentity},
-                                       #{requisitionTotalVolume},#{requisitionNumber},#{sendCity},#{organizationName},#{businessUnits},#{note})
+                                      (#{requisitionCode},#{requisitionType},#{outWarehouseCode},#{outWarehouseName},
+                                       #{inWarehouseCode},#{inWarehouseName},#{productCode},#{requisitionNumber},
+                                       #{productUnit},#{outOrganizationCode},#{inOrganizationCode},#{outOrganizationName},
+                                       #{inOrganizationName},#{initiator},#{deliverStyle},#{dealerCode},#{dealerName},
+                                       #{consignee},#{consigneePhone},#{consigneeAddress},#{consigneeIdentity},
+                                       #{requisitionTotalVolume},#{sendCity},#{note},#{createdTime},#{updatedTime},
+                                       #{orderCode},#{money},#{organizationName},#{businessUnits})
     </insert>
 
 </mapper>

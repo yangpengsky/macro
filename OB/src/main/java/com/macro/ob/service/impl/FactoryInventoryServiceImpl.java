@@ -25,7 +25,13 @@ public class FactoryInventoryServiceImpl implements FactoryInventoryService{
     @Override
     public Map<String, Object> FactoryInventorySelect(FactoryInventory fa, Page page) {
         Map<String,Object>map=new HashMap<>();
+        /**
+         *分页查询
+         */
         PageHelper.startPage(page.getPageNum(), page.getPageSize());
+        /**
+         *查询工厂库存列表
+         */
         List<FactoryInventory> list=factoryInventoryMapper.FactoryInventorySelect(fa);
        if(list.size()!=0){
            map.put("code",true);

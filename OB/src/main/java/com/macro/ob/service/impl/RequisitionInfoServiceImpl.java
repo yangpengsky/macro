@@ -1,13 +1,10 @@
 package com.macro.ob.service.impl;
-
 import com.github.pagehelper.PageHelper;
 import com.macro.ob.mapper.RequisitionInfoMapper;
 import com.macro.ob.pojo.Page;
 import com.macro.ob.pojo.RequisitionInfo;
 import com.macro.ob.service.RequisitionInfoService;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
@@ -22,13 +19,15 @@ import java.util.Map;
 public class RequisitionInfoServiceImpl implements RequisitionInfoService{
    @Resource
     private RequisitionInfoMapper requisitionInfoMapper;
-
+    /**
+     *分页查询调拨单列表
+     */
     @Override
     public Map<String, Object> RequisitionInfoSelect(RequisitionInfo requisitionInfo, Page page) {
         Map<String,Object>map=new HashMap<>();
         PageHelper.startPage(page.getPageNum(), page.getPageSize());
-        if(requisitionInfoMapper.RequisitionInfoSelect(requisitionInfo).size()!=0){
-            List<RequisitionInfo>list =requisitionInfoMapper.RequisitionInfoSelect(requisitionInfo);
+        List<RequisitionInfo>list =requisitionInfoMapper.RequisitionInfoSelect(requisitionInfo);
+        if(list.size()!=0){
             map.put("code",true);
             map.put("flag","查询数据成功");
             map.put("data",list);
@@ -38,12 +37,14 @@ public class RequisitionInfoServiceImpl implements RequisitionInfoService{
         }
         return map;
     }
-
+    /**
+     *根据requisitionCode查看调拨单信息情况
+     */
     @Override
     public Map<String, Object> ViewDetails(Integer requisitionCode) {
         Map<String,Object>map=new HashMap<>();
-        if(requisitionInfoMapper.ViewDetails(requisitionCode).size()!=0){
-            List<RequisitionInfo>list=requisitionInfoMapper.ViewDetails(requisitionCode);
+        List<RequisitionInfo>list=requisitionInfoMapper.ViewDetails(requisitionCode);
+        if(list.size()!=0){
             map.put("code",true);
             map.put("flag","查询成功");
             map.put("data",list);
@@ -53,11 +54,15 @@ public class RequisitionInfoServiceImpl implements RequisitionInfoService{
         }
         return map;
     }
-@Value("${String.RequisitionType}")
-private String RequisitionType;
+    /**
+     *制定调拨单
+     */
     @Override
     public Map<String,Object> selectInWarehouseName(RequisitionInfo requisitionInfo) {
         Map<String,Object>map=new HashMap<>();
+        /**
+         *判断输入值是否为空
+         */
         if(requisitionInfo.getRequisitionType()==null){
             map.put("flag","调拨类型不能为空");
         }else if(requisitionInfo.getInOrganizationCode()==null){
@@ -78,24 +83,32 @@ private String RequisitionType;
             map.put("flag","请选择产品");
         }else if(requisitionInfo.getRequisitionNumber()==null){
             map.put("flag","请填写正确的调拨数量");
-        }
-        else if(requisitionInfo.getRequisitionType()==RequisitionType){
-
-
-
-
-
-
-
-
-        }else {
+        } else {
+            /**
+             *获取入库仓库名称
+             */
             requisitionInfo.setInWarehouseName(requisitionInfoMapper.selectInWarehouseName(requisitionInfo));
+            /**
+             *获取出库仓库名称
+             */
             requisitionInfo.setOutWarehouseName(requisitionInfoMapper.selectOutWarehouseName(requisitionInfo));
+            /**
+             *获取调入机构名称
+             */
             requisitionInfo.setInOrganizationName(requisitionInfoMapper.selectInOrganizationName(requisitionInfo));
+            /**
+             *获取调出机构名称
+             */
             requisitionInfo.setOutOrganizationName(requisitionInfoMapper.selectOutOrganizationName(requisitionInfo));
+            /**
+             *获取经销商名称
+             */
             requisitionInfo.setDealerName(requisitionInfoMapper.selectDealerName(requisitionInfo));
-            if (requisitionInfoMapper.insertName(requisitionInfo) != 0) {
-                Integer num=requisitionInfoMapper.insertName(requisitionInfo);
+            /**
+             *插入调拨单信息
+             */
+            int num=requisitionInfoMapper.makeTransferOrders(requisitionInfo);
+            if (num != 0) {
                 map.put("number", num);
                 map.put("flag", "插入成功");
             } else {
