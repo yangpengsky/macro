@@ -22,5 +22,9 @@ public class RequisitionInfoController {
     public Map<String,Object> ViewDetails(Integer requisitionCode){
         return requisitionInfoService.ViewDetails(requisitionCode);
     }
+    @RequestMapping("/selectInName")
+    public Map<String,Object> selectInName(RequisitionInfo requisitionInfo){
+        return requisitionInfoService.selectInWarehouseName(requisitionInfo);
+    }
 
 }

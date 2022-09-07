@@ -16,4 +16,5 @@ import java.util.Map;
 public interface RequisitionInfoService{
   Map<String,Object>RequisitionInfoSelect(RequisitionInfo requisitionInfo, Page page);
   Map<String,Object>ViewDetails(Integer requisitionCode);
+  Map<String,Object> selectInWarehouseName(RequisitionInfo requisitionInfo);
 }

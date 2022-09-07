@@ -6,11 +6,12 @@ spring:
    multipart:  #设置文件大小上传限制
      max-file-size: 3000MB
      max-request-size: 4000MB
+     #连接mycat
  datasource:
    driver-class-name: com.mysql.cj.jdbc.Driver
-   url: jdbc:mysql://106.14.113.4:3306/macrodb?allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false
+   url: jdbc:mysql://43.143.183.233:8066/TESTDB?allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false
    username: root
-   password: "MACROyangpeng"
+   password: "yangpeng"
 
  redis:
    host: onedream.top
@@ -59,3 +60,4 @@ pagehelper:
   close-conn: true
   # 用于控制默认不带 count 查询的方法中，是否执行 count 查询，这里设置为true后，total会为-1
   default-count: false
+

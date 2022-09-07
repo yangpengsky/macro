@@ -17,6 +17,10 @@ import java.util.List;
 public interface RequisitionInfoMapper extends BaseMapper<RequisitionInfo> {
    List<RequisitionInfo>RequisitionInfoSelect(RequisitionInfo requisitionInfo);
    List<RequisitionInfo>ViewDetails(Integer requisitionCode);
-   Integer MakeTransferOrder(RequisitionInfo requisitionInfo);
+   String selectInWarehouseName(RequisitionInfo requisitionInfo);
+   String selectOutWarehouseName(RequisitionInfo requisitionInfo);
+   String selectInOrganizationName(RequisitionInfo requisitionInfo);
+   String selectOutOrganizationName(RequisitionInfo requisitionInfo);
+   Integer insertName(RequisitionInfo requisitionInfo);
 
 }

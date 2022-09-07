@@ -99,7 +99,28 @@
                from  requisition_info
                where requisition_code=#{requisitionCode}
     </select>
-    <insert id="MakeTransferOrder" parameterType="requisitionInfo" >
-        insert into requisition_info ()
+    <select id="selectInWarehouseName" parameterType="requisitionInfo" resultType="string">
+        select warehouse_name
+        from warehouse_info
+        where warehouse_code=#{inWarehouseCode};
+    </select>
+    <select id="selectOutWarehouseName" parameterType="requisitionInfo" resultType="string">
+        select warehouse_name
+        from warehouse_info
+        where warehouse_code=#{outWarehouseCode};
+    </select>
+    <select id="selectInOrganizationName" parameterType="requisitionInfo" resultType="string">
+        select warehouse_name
+        from dealer
+        where dealer_code=#{inOrganizationcode};
+    </select>
+    <select id="selectOutOrganizationName" parameterType="requisitionInfo" resultType="string">
+        select warehouse_name
+        from dealer
+        where dealer_code=#{outOrganizationCode};
+    </select>
+    <insert id="insertName" parameterType="requisitionInfo" >
+        insert into requisition_info (in_warehouse_name,out_warehouse_name)values (#{inWarehouseName},#{outWarehouseName,#{inOrganizationName},#{outOrganizationName})
     </insert>
+
 </mapper>

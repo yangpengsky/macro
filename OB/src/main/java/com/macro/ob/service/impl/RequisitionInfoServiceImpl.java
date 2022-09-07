@@ -53,4 +53,16 @@ public class RequisitionInfoServiceImpl implements RequisitionInfoService{
         }
         return map;
     }
+
+    @Override
+    public Map<String,Object> selectInWarehouseName(RequisitionInfo requisitionInfo) {
+        Map<String,Object>map=new HashMap<>();
+        requisitionInfo.setInWarehouseName(requisitionInfoMapper.selectInWarehouseName(requisitionInfo));
+        requisitionInfo.setOutWarehouseName(requisitionInfoMapper.selectOutWarehouseName(requisitionInfo));
+        requisitionInfo.setInOrganizationName(requisitionInfoMapper.selectInOrganizationName(requisitionInfo));
+        requisitionInfo.setOutOrganizationName(requisitionInfoMapper.selectOutOrganizationName(requisitionInfo));
+        Integer num=requisitionInfoMapper.insertName(requisitionInfo);
+        map.put("number",num);
+        return map;
+    }
 }
