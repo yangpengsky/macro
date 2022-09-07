@@ -1,0 +1,62 @@
+server:
+  port: 8081  #启动端口
+
+spring:
+ servlet:
+   multipart:  #设置文件大小上传限制
+     max-file-size: 3000MB
+     max-request-size: 4000MB
+ datasource:
+   driver-class-name: com.mysql.cj.jdbc.Driver
+   url: jdbc:mysql://43.143.183.233:8066/TESTDB?allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false
+   username: root
+   password: "yangpeng"
+
+ redis:
+   host: onedream.top
+   port: 7617
+   password: "CFPLHYS?proxy@predixy#zgyfjch"
+
+
+ jackson:
+   #    传输给前端的时间格式
+   date-format: yyyy-MM-dd HH:mm:ss
+   #    传输时间时区
+   time-zone: GMT+8
+   generator:
+     #      使number转化为是string，默认保留两位小数
+     write-numbers-as-strings: true
+
+   mvc:
+     format:
+       #      将前端传过来的时间格式化
+       date: yyyy-MM-dd
+
+
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl #打印sql查询记录
+  type-aliases-package: com.macro.ob.pojo  #实体别名
+  mapper-locations: classpath*:mapper/**/*.xml  #映射文件位置
+
+pagehelper:
+  # dialect: ①
+  # 分页插件会自动检测当前的数据库链接，自动选择合适的分页方式（可以不设置）
+  helper-dialect: mysql
+  # 上面数据库设置后，下面的设置为true不会改变上面的结果（默认为true）
+  auto-dialect: true
+  page-size-zero: false # ②
+  reasonable: true # ③
+  # 默认值为 false，该参数对使用 RowBounds 作为分页参数时有效。（一般用不着）
+  offset-as-page-num: false
+  # 默认值为 false，RowBounds是否进行count查询（一般用不着）
+  row-bounds-with-count: false
+  #params: ④
+  #support-methods-arguments: 和params配合使用，具体可以看下面的讲解
+  # 默认值为 false。设置为 true 时，允许在运行时根据多数据源自动识别对应方言的分页
+  auto-runtime-dialect: false # ⑤
+  # 与auto-runtime-dialect配合使用
+  close-conn: true
+  # 用于控制默认不带 count 查询的方法中，是否执行 count 查询，这里设置为true后，total会为-1
+  default-count: false
