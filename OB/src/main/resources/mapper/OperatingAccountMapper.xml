@@ -35,7 +35,7 @@
     <!-- 添加运营账号信息 -->
     <insert id="insertOperatingAccountInfo" parameterType="com.macro.ob.pojo.OperatingAccount">
         insert into macrodb.operating_account(<include refid="Base_Column_List" />)
-        values(#{userName},"123456",#{name},#{affiliation},#{productLine},#{role},#{gender},#{email},#{phoneNumber},#{operationAccountState});
+        values(#{userName},"123456",#{name},#{affiliation},#{productLine},#{role},#{gender},#{email},#{phoneNumber},"启用");
     </insert>
 
     <!--  按照运营账号编码删除运营账号信息  -->

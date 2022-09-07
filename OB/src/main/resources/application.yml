@@ -8,9 +8,9 @@ spring:
      max-request-size: 4000MB
  datasource:
    driver-class-name: com.mysql.cj.jdbc.Driver
-   url: jdbc:mysql://106.14.113.4:3306/macrodb?allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false
+   url: jdbc:mysql://43.143.183.233:8066/TESTDB?allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false
    username: root
-   password: "MACROyangpeng"
+   password: "yangpeng"
 
  redis:
    host: onedream.top

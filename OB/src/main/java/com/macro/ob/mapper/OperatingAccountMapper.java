@@ -15,13 +15,29 @@ import java.util.Map;
 */
 public interface OperatingAccountMapper extends BaseMapper<OperatingAccount> {
 
-    // 添加运营账号信息
+    /**
+     * 添加运营账号信息
+     * @param operatingAccount
+     * @return
+     */
     Integer insertOperatingAccountInfo(OperatingAccount operatingAccount);
-    // 按照运营账号编号批量删除员工信息
+    /**
+     * 按照运营账号编号批量删除员工信息
+     * @param operatingAccount
+     * @return
+     */
     Integer deleteOperatingAccountInfoById(OperatingAccount operatingAccount);
-    // 修改运营账号的信息
+    /**
+     * 修改运营账号的信息
+     * @param operatingAccount
+     * @return
+     */
     Integer updateOperatingAccountInfo(OperatingAccount operatingAccount);
-    // 查询运营账号信息
+    /**
+     * 查询运营账号信息
+     * @param operatingAccount
+     * @return
+     */
     List<OperatingAccount> selectOperatingAccountInfoLike(OperatingAccount operatingAccount);
 
 }

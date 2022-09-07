@@ -5,6 +5,8 @@ import com.macro.ob.service.OperatingAccountService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 /**
@@ -29,7 +31,10 @@ public class OperatingAccountController {
         return operatingAccountService.alterOperatingAccountInfoById(operatingAccount);
     }
     @PostMapping("/queryOperatingAccountInfoByLike")
-    public Map<String, Object> queryOperatingAccountInfoByLike(@RequestBody OperatingAccount operatingAccount){
-        return operatingAccountService.queryOperatingAccountInfoByLike(operatingAccount);
+    public Map<String, Object> queryOperatingAccountInfoByLike(HttpServletRequest request, @RequestBody OperatingAccount operatingAccount){
+        HttpSession session = request.getSession();
+        Map<String, Object> map = operatingAccountService.queryOperatingAccountInfoByLike(operatingAccount);
+        session.setAttribute("info",map.get("info"));
+        return map;
     }
 }
