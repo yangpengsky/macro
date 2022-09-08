@@ -4,20 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00501a46-a1b4-40b7-b5b2-a1a7e409a9ca" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/controller/OperatingAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/controller/OperatingAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/controller/OrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/controller/OrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/OperatingAccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/OperatingAccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/OrdersMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/OrdersMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/pojo/Orders.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/pojo/Orders.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/OperatingAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/OperatingAccountService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/OrdersService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/OrdersService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/OperatingAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/OperatingAccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/OrdersServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/OrdersServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OperatingAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OperatingAccountMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OrdersMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OrdersMapper.xml" afterDir="false" />
-    </list>
+    <list default="true" id="00501a46-a1b4-40b7-b5b2-a1a7e409a9ca" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -113,6 +100,7 @@
       <workItem from="1662085743300" duration="28750000" />
       <workItem from="1662339414069" duration="26257000" />
       <workItem from="1662512455575" duration="16620000" />
+      <workItem from="1662609837407" duration="422000" />
     </task>
     <servers />
   </component>
