@@ -25,6 +25,12 @@ public class RequisitionInfoServiceImpl implements RequisitionInfoService{
     @Override
     public Map<String, Object> RequisitionInfoSelect(RequisitionInfo requisitionInfo, Page page) {
         Map<String,Object>map=new HashMap<>();
+        if(page.getPageNum()==null) {
+            page.setPageNum(1);
+        }
+        if(page.getPageSize()==null){
+            page.setPageSize(10);
+        }
         PageHelper.startPage(page.getPageNum(), page.getPageSize());
         List<RequisitionInfo>list =requisitionInfoMapper.RequisitionInfoSelect(requisitionInfo);
         if(list.size()!=0){

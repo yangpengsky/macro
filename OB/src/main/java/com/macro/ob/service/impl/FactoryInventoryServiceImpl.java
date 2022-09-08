@@ -23,7 +23,13 @@ public class FactoryInventoryServiceImpl implements FactoryInventoryService{
     @Resource
     private FactoryInventoryMapper factoryInventoryMapper;
     @Override
-    public Map<String, Object> FactoryInventorySelect(FactoryInventory fa, Page page) {
+    public Map<String, Object> FactoryInventorySelect(FactoryInventory factoryInventory, Page page) {
+        if(page.getPageNum()==null) {
+            page.setPageNum(1);
+        }
+        if(page.getPageSize()==null){
+            page.setPageSize(10);
+        }
         Map<String,Object>map=new HashMap<>();
         /**
          *分页查询
@@ -32,7 +38,7 @@ public class FactoryInventoryServiceImpl implements FactoryInventoryService{
         /**
          *查询工厂库存列表
          */
-        List<FactoryInventory> list=factoryInventoryMapper.FactoryInventorySelect(fa);
+        List<FactoryInventory> list=factoryInventoryMapper.FactoryInventorySelect(factoryInventory);
        if(list.size()!=0){
            map.put("code",true);
            map.put("data",list);

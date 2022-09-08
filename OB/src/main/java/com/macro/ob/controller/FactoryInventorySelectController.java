@@ -15,7 +15,7 @@ public class FactoryInventorySelectController {
      *查询工厂库存
      */
     @RequestMapping("/FactoryInventorySelect")
-    public Map<String,Object> FactoryInventorySelect(FactoryInventory fa,Page page){
-        return factoryInventoryService.FactoryInventorySelect(fa,page);
+    public Map<String,Object> FactoryInventorySelect(FactoryInventory factoryInventory,Page page){
+        return factoryInventoryService.FactoryInventorySelect(factoryInventory,page);
     }
 }

@@ -21,6 +21,6 @@ import java.util.Map;
  */
 @Mapper
 public interface FactoryInventoryMapper extends BaseMapper<FactoryInventory> {
-      List<FactoryInventory> FactoryInventorySelect(FactoryInventory fa);
+      List<FactoryInventory> FactoryInventorySelect(FactoryInventory factoryInventory);
 
 }
