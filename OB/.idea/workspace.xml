@@ -44,8 +44,8 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="E:\apache-maven-3.6.0" />
-        <option name="userSettingsFile" value="F:\mvn\apache-maven-3.6.3\conf\settings.xml" />
+        <option name="mavenHome" value="D:\soft\apache-maven-3.6.1" />
+        <option name="userSettingsFile" value="D:\soft\apache-maven-3.6.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
