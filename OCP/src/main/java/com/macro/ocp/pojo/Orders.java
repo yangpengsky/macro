@@ -1,10 +1,8 @@
 package com.macro.ocp.pojo;
 
-<<<<<<< HEAD
-=======
+
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.fasterxml.jackson.annotation.JsonFormat;
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,11 +25,7 @@ import java.util.Date;
 @AllArgsConstructor
 @Component
 @ToString
-<<<<<<< HEAD
-@ConfigurationProperties(prefix ="user")
-=======
 @ConfigurationProperties(prefix ="orders")
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
 public class Orders implements Serializable {
     /**
      * 序列化ID
@@ -51,27 +45,16 @@ public class Orders implements Serializable {
      * 订单状态
      */
     private String orderStatus;
-<<<<<<< HEAD
-
-=======
     /**
      * OB系统订单状态
      */
     private String obOrderStatus;
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
+
     /**
      * 提货方式
      */
     private String deliveryMethod;
 
-<<<<<<< HEAD
-//    /**
-//     * 产品编码
-//     */
-//    private Integer productCode;
-
-=======
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
     /**
      * 出库仓库
      */
@@ -145,10 +128,8 @@ public class Orders implements Serializable {
     /**
      * 下单日期
      */
-<<<<<<< HEAD
-=======
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
     private Date createdTime;
 
     /**
@@ -159,18 +140,15 @@ public class Orders implements Serializable {
     /**
      * 更新时间
      */
-<<<<<<< HEAD
-=======
+
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
     private Date updatedTime;
 
     /**
      * 汇总计划编号
      */
     private Integer summaryPlanCode;
-<<<<<<< HEAD
-=======
+
     /**
      * 产品编号数组
      */
@@ -208,5 +186,4 @@ public class Orders implements Serializable {
      */
     @TableField(exist = false)
     private Integer pageSize;
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
 }

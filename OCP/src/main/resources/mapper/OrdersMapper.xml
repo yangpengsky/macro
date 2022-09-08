@@ -8,13 +8,8 @@
         <id property="orderCode" column="order_code" jdbcType="INTEGER"/>
         <result property="orderType" column="order_type" jdbcType="VARCHAR"/>
         <result property="orderStatus" column="order_status" jdbcType="VARCHAR"/>
-<<<<<<< HEAD
-        <result property="deliveryMethod" column="delivery_method" jdbcType="VARCHAR"/>
-<!--        <result property="productCode" column="product_code" jdbcType="INTEGER"/>-->
-=======
         <result property="obOrderStatus" column="OB_order_Status" jdbcType="VARCHAR"/>
         <result property="deliveryMethod" column="delivery_method" jdbcType="VARCHAR"/>
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
         <result property="outWarehouse" column="out_warehouse" jdbcType="INTEGER"/>
         <result property="inWarehouse" column="in_warehouse" jdbcType="INTEGER"/>
         <result property="deliveryAddress" column="delivery_address" jdbcType="VARCHAR"/>
@@ -39,24 +34,16 @@
         order_code
         ,order_type
         ,order_status
-<<<<<<< HEAD
-        ,delivery_method
-        ,product_code
-=======
+
         ,OB_order_Status
         ,delivery_method
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
         ,out_warehouse
         ,in_warehouse
         ,delivery_address
         ,receiver
         ,contact_number
-<<<<<<< HEAD
-        ,remarks,dealer_code
-=======
         ,remarks
         ,dealer_code
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
         ,product_quantity
         ,bulk_volume
         ,aggregate_amount
@@ -70,41 +57,6 @@
         ,summary_plan_code
     </sql>
 
-<<<<<<< HEAD
-    <insert id="insertOrders" parameterType="orders" useGeneratedKeys="true" keyProperty="orderCode">
-        insert into orders( order_type
-        , order_status
-        , delivery_method
-        , out_warehouse
-        , delivery_address
-        , receiver
-        , contact_number
-        , remarks, dealer_code
-        , product_quantity
-        , bulk_volume
-        , aggregate_amount
-        , invoice_price
-        , order_preliminary_audit
-        , order_review_audit
-        , created_by
-        , created_time
-        , updated_by
-        , updated_time
-        , summary_plan_code)
-        values (#{orderType}
-        ,#{orderStatus}
-        ,#{deliveryMethod}
-        ,#{outWarehouse}
-        ,#{deliveryAddress}
-        ,#{}
-        )
-    </insert>
-
-
-
-
-
-=======
     <!-- 新增一条订单记录   -->
     <insert id="insertOrders" parameterType="orders" useGeneratedKeys="true" keyProperty="orderCode">
         insert into orders( order_type
@@ -201,5 +153,4 @@
         where order_code = #{orderCode}
         and dealer_code = #{dealerCode}
     </update>
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
 </mapper>

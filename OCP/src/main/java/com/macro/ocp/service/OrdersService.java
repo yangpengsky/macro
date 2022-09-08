@@ -1,13 +1,5 @@
 package com.macro.ocp.service;
-<<<<<<< HEAD
-/**
-* @author zhangkein
-* @description 针对表【orders(订单表)】的数据库操作Service
-* @createDate 2022-09-02 14:05:25
-*/
-public interface OrdersService{
 
-=======
 
 import com.macro.ocp.pojo.Orders;
 
@@ -53,5 +45,6 @@ public interface OrdersService {
      * @date 2022/9/8 11:58
      */
     Map<String, Object> updateOrder(HttpServletRequest request, Orders order);
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
+
+
 }

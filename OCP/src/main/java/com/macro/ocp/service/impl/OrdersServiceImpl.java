@@ -1,13 +1,5 @@
 package com.macro.ocp.service.impl;
 
-<<<<<<< HEAD
-import com.macro.ocp.service.OrdersService;
-import org.springframework.stereotype.Service;
-
-/**
-* @author zhangkein
-* @description 针对表【orders(订单表)】的数据库操作Service实现
-=======
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.macro.ocp.pojo.DealerAccountNumber;
@@ -29,14 +21,12 @@ import java.util.Map;
  * 针对表【orders(订单表)】的数据库操作Service实现
 * @author zhangkein
 * @description
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
+ *
 * @createDate 2022-09-02 14:05:25
 */
 @Service
 public class OrdersServiceImpl implements OrdersService{
 
-<<<<<<< HEAD
-=======
     @Resource
     public OrdersMapper ordersMapper;
     @Resource
@@ -164,5 +154,5 @@ public class OrdersServiceImpl implements OrdersService{
         }
         return map;
     }
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
+
 }

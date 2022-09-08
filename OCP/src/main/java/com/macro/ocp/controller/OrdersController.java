@@ -1,13 +1,6 @@
 package com.macro.ocp.controller;
 
-<<<<<<< HEAD
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
-/**
- * orders控制层
-=======
 import com.macro.ocp.pojo.Orders;
 import com.macro.ocp.service.OrdersService;
 import org.springframework.web.bind.annotation.*;
@@ -18,8 +11,6 @@ import java.util.Map;
 
 /**
  * orders控制层
- *
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
  * @author zhangkein
  * @date 2022/09/02
  */
@@ -28,8 +19,6 @@ import java.util.Map;
 @RequestMapping(value = "/orders")
 public class OrdersController {
 
-<<<<<<< HEAD
-=======
 
     @Resource
     private OrdersService ordersService;
@@ -71,5 +60,5 @@ public class OrdersController {
     public Map<String,Object> updateOrder(HttpServletRequest request,@RequestBody Orders order){
         return ordersService.updateOrder(request, order);
     }
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
+
 }

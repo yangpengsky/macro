@@ -3,11 +3,9 @@ package com.macro.ocp.mapper;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.macro.ocp.pojo.Orders;
 
-<<<<<<< HEAD
-=======
+
 import java.util.List;
 
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
 /**
 * @author zhangkein
 * @description 针对表【orders(订单表)】的数据库操作Mapper
@@ -16,9 +14,7 @@ import java.util.List;
 */
 public interface OrdersMapper extends BaseMapper<Orders> {
 
-<<<<<<< HEAD
 
-=======
     /**
      * 传入一个orders对象，返回这个order的ID值
      * @param orders
@@ -41,5 +37,5 @@ public interface OrdersMapper extends BaseMapper<Orders> {
      * @date 2022/9/8 11:57
      */
     Integer updateOrder(Orders orders);
->>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
+
 }
