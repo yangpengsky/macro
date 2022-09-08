@@ -8,8 +8,13 @@
         <id property="orderCode" column="order_code" jdbcType="INTEGER"/>
         <result property="orderType" column="order_type" jdbcType="VARCHAR"/>
         <result property="orderStatus" column="order_status" jdbcType="VARCHAR"/>
+<<<<<<< HEAD
         <result property="deliveryMethod" column="delivery_method" jdbcType="VARCHAR"/>
 <!--        <result property="productCode" column="product_code" jdbcType="INTEGER"/>-->
+=======
+        <result property="obOrderStatus" column="OB_order_Status" jdbcType="VARCHAR"/>
+        <result property="deliveryMethod" column="delivery_method" jdbcType="VARCHAR"/>
+>>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
         <result property="outWarehouse" column="out_warehouse" jdbcType="INTEGER"/>
         <result property="inWarehouse" column="in_warehouse" jdbcType="INTEGER"/>
         <result property="deliveryAddress" column="delivery_address" jdbcType="VARCHAR"/>
@@ -34,14 +39,24 @@
         order_code
         ,order_type
         ,order_status
+<<<<<<< HEAD
         ,delivery_method
         ,product_code
+=======
+        ,OB_order_Status
+        ,delivery_method
+>>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
         ,out_warehouse
         ,in_warehouse
         ,delivery_address
         ,receiver
         ,contact_number
+<<<<<<< HEAD
         ,remarks,dealer_code
+=======
+        ,remarks
+        ,dealer_code
+>>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
         ,product_quantity
         ,bulk_volume
         ,aggregate_amount
@@ -55,6 +70,7 @@
         ,summary_plan_code
     </sql>
 
+<<<<<<< HEAD
     <insert id="insertOrders" parameterType="orders" useGeneratedKeys="true" keyProperty="orderCode">
         insert into orders( order_type
         , order_status
@@ -88,4 +104,102 @@
 
 
 
+=======
+    <!-- 新增一条订单记录   -->
+    <insert id="insertOrders" parameterType="orders" useGeneratedKeys="true" keyProperty="orderCode">
+        insert into orders( order_type
+                          , order_status
+                          , delivery_method
+                          , out_warehouse
+                          , delivery_address
+                          , receiver
+                          , contact_number
+                          , remarks
+                          , dealer_code
+                          , product_quantity
+                          , bulk_volume
+                          , aggregate_amount
+                          , invoice_price
+                          , created_by)
+        values ( #{orderType}
+               , #{orderStatus}
+               , #{deliveryMethod}
+               , #{outWarehouse}
+               , #{deliveryAddress}
+               , #{receiver}
+               , #{contactNumber}
+               , #{remarks}
+               , #{dealerCode}
+               , #{productQuantity}
+               , #{bulkVolume}
+               , #{aggregateAmount}
+               , #{invoicePrice}
+               , #{createdBy})
+    </insert>
+
+    <!--    查询订单信息-->
+    <select id="selectOrdersByInfo" parameterType="orders" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from orders
+        <where>
+            <if test="dealerCode != null and dealerCode != ''">
+                and dealer_code = #{dealerCode}
+            </if>
+            <if test="orderCode != null and orderCode != ''">
+                and order_code = #{orderCode}
+            </if>
+            <if test="orderType != null and orderType != ''">
+                and order_type = #{orderType}
+            </if>
+            <if test="orderStatus != null and orderType != ''">
+                and order_status = #{orderStatus}
+            </if>
+            <if test="startTime != null">
+                and created_time >= #{startTime}
+            </if>
+            <if test="endTime != null">
+                and created_time <![CDATA[<=]]> #{endTime}
+            </if>
+            <if test="startAggregateAmount != null and startAggregateAmount != ''">
+                and aggregate_amount >= #{startAggregateAmount}
+            </if>
+            <if test="endAggregateAmount != null and endAggregateAmount != ''">
+                and aggregate_amount <![CDATA[<=]]> #{endAggregateAmount}
+            </if>
+        </where>
+    </select>
+    <!--更新订单信息-->
+    <update id="updateOrder" parameterType="orders">
+        update orders
+        <set>
+            <if test="orderStatus != null">
+                order_status = #{orderStatus},
+            </if>
+            <if test="deliveryMethod != null">
+                delivery_method = #{deliveryMethod},
+            </if>
+            <if test="outWarehouse != null">
+                out_warehouse = #{outWarehouse},
+            </if>
+            <if test="inWarehouse != null">
+                in_warehouse = #{inWarehouse},
+            </if>
+            <if test="deliveryAddress != null">
+                delivery_address = #{deliveryAddress},
+            </if>
+            <if test="receiver != null">
+                receiver = #{receiver},
+            </if>
+            <if test="contactNumber != null">
+                contact_number = #{contactNumber},
+            </if>
+            <if test="remarks != null">
+                remarks = #{remarks},
+            </if>
+        </set>
+        where order_code = #{orderCode}
+        and dealer_code = #{dealerCode}
+    </update>
+>>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
 </mapper>

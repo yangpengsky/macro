@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 ./**/HELP.md
 ./**/target/
 !./*/.mvn/wrapper/maven-wrapper.jar
@@ -11,6 +12,8 @@
 ./**/*.iml
 ./**/*.ipr
 =======
+=======
+>>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
 **/HELP.md
 **/target/
 !**/.mvn/wrapper/maven-wrapper.jar
@@ -22,4 +25,7 @@
 **/*.iws
 **/*.iml
 **/*.ipr
+<<<<<<< HEAD
 >>>>>>> zxl
+=======
+>>>>>>> 94f054ec28cf73fa11a51bb8290ab8db4246c87b
