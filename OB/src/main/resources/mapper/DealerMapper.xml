@@ -21,29 +21,35 @@
             <result property="alertAmount" column="alert_amount" jdbcType="DECIMAL"/>
             <result property="paidStockDeposit" column="paid_stock_deposit" jdbcType="DECIMAL"/>
             <result property="accountCode" column="account_code" jdbcType="INTEGER"/>
-            <result property="isdelete" column="isdelete" jdbcType="TINYINT"/>
             <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
             <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        dealer_code,
-        dealer_name,
-        dealer_abbreviation,
-        dealer_category,
-        category_code,
-        organization_name,
-        status,credit_line,
-        shipment_quota,
-        ocp_actual_balance,
-        trade_book_balance,
-        ispremium,
-        deduction_proportion,
-        alert_amount,
-        paid_stock_deposit,
-        account_code,
-        isdelete,created_time,
-        updated_time
-    </sql>
+    <select id="selectDealerInfoByLike" parameterType="com.macro.ob.pojo.Dealer" resultMap="BaseResultMap">
+        select dealer_code,dealer_name,dealer_abbreviation,organization_name,dealer_category,status,created_time,updated_time
+        from macrodb.dealer
+        <where>
+            <if test="dealerName != null">
+                dealer_name like CONCAT('%',#{dealerName},'%')
+                or getPY(dealer_name) like CONCAT('%',#{dealerName},'%')
+            </if>
+            <if test="dealerCategory != null">
+                and dealer_category=#{dealerCategory}
+            </if>
+            <if test="dealerCode != null">
+                and dealer_code=#{dealer_code}
+            </if>
+        </where>
+    </select>
+    <select id="selectDealerMaintainInfo" parameterType="com.macro.ob.pojo.Dealer" resultMap="BaseResultMap">
+        select credit_line,shipment_quota,ocp_actual_balance,trade_book_balance,ispremium,deduction_proportion,alert_amount,paid_stock_deposit
+        from macrodb.dealer
+        where dealer_code=#{dealerCode}
+    </select>
+    <update id="updataDealerInfo" parameterType="com.macro.ob.pojo.Dealer">
+        update macrodb.dealer
+        set account_code=#{accountCode}
+        where dealer_code=#{dealerCode}
+    </update>
 
 </mapper>

@@ -102,11 +102,6 @@ public class Dealer implements Serializable {
     private Integer accountCode;
 
     /**
-     * 是否删除
-     */
-    private Integer isdelete;
-
-    /**
      * 创建时间
      */
     private Date createdTime;
@@ -115,5 +110,14 @@ public class Dealer implements Serializable {
      * 更新时间
      */
     private Date updatedTime;
+
+    /**
+     * 分页的页数
+     */
+    private Integer pageNum;
+    /**
+     * 分页的记录数
+     */
+    private Integer pageSize;
 
 }
