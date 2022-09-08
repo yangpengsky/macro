@@ -61,4 +61,20 @@ public interface OrdersService  {
     Map<String,Object> selectOrderConformIF(Orders orders);
 
 
+    /**
+     * 备货计划列表
+     * @param orders
+     * @return
+     */
+    Map<String,Object> selectOrderStockList(Orders orders);
+
+
+    /**
+     * 备货计划列表导出
+     * @param orders
+     * @return
+     */
+    Map<String,Object> selectOrderStockListExport(Orders orders) throws IOException;
+
+
 }

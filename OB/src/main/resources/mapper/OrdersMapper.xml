@@ -115,6 +115,73 @@
 
     </select>
 
+    <!--    备货计划列表-->
+    <select id="selectOrderStockList" resultMap="BaseResultMap" parameterType="orders">
+        select order_code
+        ,order_type,order_status,OB_order_status,
+        delivery_method,out_warehouse,
+        in_warehouse,delivery_address,receiver,
+        contact_number,remarks,o.dealer_code,
+        product_quantity,bulk_volume,aggregate_amount,
+        invoice_price,order_preliminary_audit,order_review_audit,
+        created_by,o.created_time,o.updated_by,
+        o.updated_time,o.summary_plan_code,d.dealer_name,d.organization_name
+        from macrodb.orders as o,macrodb.dealer as d
+        <where>
+            o.dealer_code=d.dealer_code
+            <if test="dealerCode != null">
+                and o.dealer_code=#{dealerCode}
+            </if>
+            <if test="orderCode != null">
+                and o.order_code=#{orderCode}
+            </if>
+            <if test="startDate != null">
+                and o.created_time <![CDATA[>=]]> #{startDate}
+            </if>
+            <if test="endDate != null">
+                and o.created_time <![CDATA[<=]]> #{endDate}
+            </if>
+            <if test="dealerCode != null">
+                and o.dealer_code=#{dealerCode}
+            </if>
+            <if test="dealerName != null">
+                and d.dealer_name like CONCAT("%",#{dealerName},"%")
+                or getPY(d.dealer_name) like CONCAT(#{dealerName},"%")
+            </if>
+            <if test="ArrOrderStatus != null">
+                <foreach collection="ArrOrderStatus" index="index" open="" item="item" separator="" close="">
+                    and OB_order_status=#{item}
+                </foreach>
+            </if>
+
+        </where>
+        order by created_time asc
+    </select>
+
+
+    <!--   备货计划列表导出 -->
+    <select id="selectOrderStockListExport" parameterType="orders" resultMap="BaseResultMap">
+        select order_code
+        ,order_type,order_status,OB_order_status,
+        delivery_method,out_warehouse,
+        in_warehouse,delivery_address,receiver,
+        contact_number,remarks,o.dealer_code,
+        product_quantity,bulk_volume,aggregate_amount,
+        invoice_price,order_preliminary_audit,order_review_audit,
+        created_by,o.created_time,o.updated_by,
+        o.updated_time,o.summary_plan_code,d.dealer_name,d.organization_name
+        from macrodb.orders as o,macrodb.dealer as d
+        <where>
+            o.dealer_code=d.dealer_code
+            <if test=" codes != null">
+                and o.order_code in
+                <foreach collection="codes" close=")" separator="," item="code" open="(" index="index">
+                    #{code}
+                </foreach>
+            </if>
+        </where>
+    </select>
+
 
     <update id="updateOrderPass" parameterType="orders">
         update orders
@@ -123,10 +190,12 @@
         OB_order_status="已审核",
         order_preliminary_audit=#{orderPreliminaryAudit}
         <where>
-            order_code in
-            <foreach collection="codes" close=")" separator="," item="code" open="(" index="index">
-                #{code}
-            </foreach>
+            <if test=" codes != null">
+                order_code in
+                <foreach collection="codes" close=")" separator="," item="code" open="(" index="index">
+                    #{code}
+                </foreach>
+            </if>
         </where>
     </update>
 

@@ -171,5 +171,10 @@ public class Orders implements Serializable {
      */
     private int pageSize;
 
+    /**
+     * 订单状态数组
+     */
+    private String[] ArrOrderStatus;
+
 
 }

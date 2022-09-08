@@ -3,6 +3,7 @@ package com.macro.ob.controller;
 import com.macro.ob.pojo.OperatingAccount;
 import com.macro.ob.pojo.Orders;
 import com.macro.ob.service.OrdersService;
+import lombok.SneakyThrows;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -64,7 +65,7 @@ public class OrderController {
     }
 
     /**
-     * 初审核通过
+     * 初审核不通过
      * @param orders
      * @return
      */
@@ -75,7 +76,6 @@ public class OrderController {
 
     /**
      * 查询订单信息
-     *
      * @param orders
      * @return
      */
@@ -83,6 +83,16 @@ public class OrderController {
     public Map<String, Object> selectOrderByOrderCode(@RequestBody Orders orders) {
         System.out.println(orders.getOrderCode() + "=============");
         return ordersService.selectOrderByOrderCode(orders);
+    }
+
+    /**
+     * 计划备货列表
+     * @param orders
+     * @return
+     */
+    @PostMapping("/selectOrderStockList")
+    public Map<String,Object> selectOrderStockList(@RequestBody Orders orders){
+        return ordersService.selectOrderStockList(orders);
     }
 
 
@@ -97,6 +107,18 @@ public class OrderController {
         System.out.println(orders);
         System.out.println("yangpeng");
         return ordersService.exportTable(orders);
+    }
+
+
+    /**
+     * 备货计划列表数据导出
+     * @param orders
+     * @return
+     */
+    @SneakyThrows
+    @PostMapping("/selectOrderStockListExport")
+    public Map<String,Object> selectOrderStockListExport(@RequestBody Orders orders) throws IOException {
+        return ordersService.selectOrderStockListExport(orders);
     }
 
 

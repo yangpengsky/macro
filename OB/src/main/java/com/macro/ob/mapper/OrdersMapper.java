@@ -50,6 +50,21 @@ public interface OrdersMapper extends BaseMapper<Orders> {
      */
     List<Orders> selectOrderConformIF(Orders orders);
 
+    /**
+     * 备货计划列表
+     * @param orders
+     * @return
+     */
+    List<Orders> selectOrderStockList(Orders orders);
+
+
+    /**
+     * 备货计划列表导出
+     * @param orders
+     * @return
+     */
+    List<Orders> selectOrderStockListExport(Orders orders);
+
 
 
 }
