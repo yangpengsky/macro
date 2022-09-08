@@ -93,4 +93,22 @@ public class OperatingAccountServiceImpl implements OperatingAccountService{
         }
         return map;
     }
+
+    @Override
+    public Map<String, Object> queryOperatingAccountInfoByUserName(OperatingAccount operatingAccount) {
+        Map<String,Object> map = new HashMap<>();
+        List<OperatingAccount> list = operatingAccountMapper.selectOperatingAccountInfoByUserName(operatingAccount);
+        if (list.size() > 0){
+            map.put("code", 0);
+            map.put("flag", true);
+            map.put("info",list.get(0));
+            map.put("rows",list.size());
+            map.put("message", "登录成功！");
+        }else {
+            map.put("code", 1);
+            map.put("flag", false);
+            map.put("message", "登录失败！");
+        }
+        return map;
+    }
 }

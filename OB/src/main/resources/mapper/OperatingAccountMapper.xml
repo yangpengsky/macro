@@ -93,4 +93,10 @@
         </where>
     </select>
 
+    <select id="selectOperatingAccountInfoByUserName" parameterType="com.macro.ob.pojo.OperatingAccount" resultMap="BaseResultMap">
+        select user_name,pwd
+        from macrodb.operating_account
+        where user_name=#{userName} and pwd=#{pwd};
+    </select>
+
 </mapper>

@@ -35,4 +35,11 @@ public interface OperatingAccountService {
      */
     Map<String,Object> queryOperatingAccountInfoByLike(OperatingAccount operatingAccount);
 
+    /**
+     * 通过用户名和密码查询
+     * @param operatingAccount
+     * @return
+     */
+    Map<String,Object> queryOperatingAccountInfoByUserName(OperatingAccount operatingAccount);
+
 }

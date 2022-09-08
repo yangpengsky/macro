@@ -161,5 +161,15 @@ public class Orders implements Serializable {
      */
     private String organizationName;
 
+    /**
+     * 页码
+     */
+    private int pageNum;
+
+    /**
+     * 显示多少条
+     */
+    private int pageSize;
+
 
 }

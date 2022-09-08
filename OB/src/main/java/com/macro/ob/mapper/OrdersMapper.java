@@ -43,6 +43,13 @@ public interface OrdersMapper extends BaseMapper<Orders> {
      */
     List<Orders> selectOrderByOrderCode(Orders orders);
 
+    /**
+     * 复核订单查询
+     * @param orders
+     * @return
+     */
+    List<Orders> selectOrderConformIF(Orders orders);
+
 
 
 }

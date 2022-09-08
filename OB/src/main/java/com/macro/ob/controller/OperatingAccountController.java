@@ -31,10 +31,15 @@ public class OperatingAccountController {
         return operatingAccountService.alterOperatingAccountInfoById(operatingAccount);
     }
     @PostMapping("/queryOperatingAccountInfoByLike")
-    public Map<String, Object> queryOperatingAccountInfoByLike(HttpServletRequest request, @RequestBody OperatingAccount operatingAccount){
+    public Map<String, Object> queryOperatingAccountInfoByLike(@RequestBody OperatingAccount operatingAccount){
+        return operatingAccountService.queryOperatingAccountInfoByLike(operatingAccount);
+    }
+    @PostMapping("/queryOperatingAccountInfoByUserName")
+    public Map<String, Object> queryOperatingAccountInfoByUserName(HttpServletRequest request,@RequestBody OperatingAccount operatingAccount){
         HttpSession session = request.getSession();
-        Map<String, Object> map = operatingAccountService.queryOperatingAccountInfoByLike(operatingAccount);
-        session.setAttribute("info",map.get("info"));
+        Map<String, Object> map = operatingAccountService.queryOperatingAccountInfoByUserName(operatingAccount);
+        OperatingAccount operatingAccount2 =(OperatingAccount) map.get("info");
+        session.setAttribute("info",operatingAccount2);
         return map;
     }
 }

@@ -3,6 +3,7 @@ package com.macro.ob.service;
 
 import com.macro.ob.pojo.Orders;
 
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +52,13 @@ public interface OrdersService  {
      * @return
      */
     Map<String,Object>  exportTable(Orders orders) throws IOException;
+
+    /**
+     * 复核查询
+     * @param orders
+     * @return
+     */
+    Map<String,Object> selectOrderConformIF(Orders orders);
 
 
 }

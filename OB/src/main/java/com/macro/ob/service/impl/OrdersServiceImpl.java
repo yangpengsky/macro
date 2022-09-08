@@ -1,5 +1,7 @@
 package com.macro.ob.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.macro.ob.mapper.OrdersMapper;
 import com.macro.ob.pojo.Orders;
 import com.macro.ob.service.OrdersService;
@@ -34,15 +36,18 @@ public class OrdersServiceImpl implements OrdersService {
 
     @Override
     public Map<String, Object> selectOrderIF(Orders orders) {
-
+        PageHelper.startPage(orders.getPageNum(),orders.getPageSize());
         List<Orders> list = ordersMapper.selectOrderIF(orders);
+        PageInfo<Orders> pageInfo=new PageInfo<>(list);
         Map<String, Object> map = new HashMap<>();
         if (list.size()>0){
-
             map.put("code", 0);
             map.put("flag", true);
+            map.put("pageNum",pageInfo.getPageNum());
+            map.put("pageSize",pageInfo.getPageSize());
             map.put("row",list.size());
             map.put("info", list);
+
             map.put("message", "查询成功！");
         }else {
 
@@ -50,8 +55,6 @@ public class OrdersServiceImpl implements OrdersService {
             map.put("flag", false);
             map.put("message", "查询失败！");
         }
-
-
         return map;
     }
 
@@ -157,10 +160,8 @@ public class OrdersServiceImpl implements OrdersService {
         workbook.write(fileOutputStream);
         //6.关闭
         workbook.close();
-
          Map<String, Object> map = new HashMap<>();
                  if (list.size()>0){
-
                      map.put("code", 0);
                      map.put("flag", true);
                      map.put("info", list);
@@ -172,6 +173,25 @@ public class OrdersServiceImpl implements OrdersService {
                      map.put("message", "导出表失败！");
                  }
 
+        return map;
+    }
+
+    @Override
+    public Map<String, Object> selectOrderConformIF(Orders orders) {
+        List<Orders> list = ordersMapper.selectOrderConformIF(orders);
+         Map<String, Object> map = new HashMap<>();
+                 if (list.size()>0){
+                     map.put("code", 0);
+                     map.put("flag", true);
+                     map.put("row",list.size());
+                     map.put("info", list);
+                     map.put("message", "复核查询成功！");
+                 }else {
+
+                     map.put("code", 1);
+                     map.put("flag", false);
+                     map.put("message", "复核查询失败！");
+                 }
         return map;
     }
 

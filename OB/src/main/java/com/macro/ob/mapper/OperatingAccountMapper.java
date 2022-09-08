@@ -40,4 +40,11 @@ public interface OperatingAccountMapper extends BaseMapper<OperatingAccount> {
      */
     List<OperatingAccount> selectOperatingAccountInfoLike(OperatingAccount operatingAccount);
 
+    /**
+     * 登录查询账号信息
+     * @param operatingAccount
+     * @return
+     */
+    List<OperatingAccount> selectOperatingAccountInfoByUserName(OperatingAccount operatingAccount);
+
 }
