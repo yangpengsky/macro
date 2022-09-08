@@ -1,17 +1,9 @@
 package com.macro.ob.pojo;
 
-<<<<<<< HEAD
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-=======
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.ToString;
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -22,7 +14,6 @@ import java.util.Date;
 /**
  * 产品表
  * @TableName product
-<<<<<<< HEAD
  * @author huangguo
  */
 @Component
@@ -33,17 +24,6 @@ import java.util.Date;
 public class Product implements Serializable {
 
     private static final long serialVersionUID = 5215552995520692566L;
-=======
- */
-@Data
-@ToString
-@AllArgsConstructor
-@NoArgsConstructor
-@Component
-@ConfigurationProperties(prefix = "product")
-@TableName("product")
-public class Product implements Serializable {
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
     /**
      * 产品编码
      */
@@ -244,7 +224,6 @@ public class Product implements Serializable {
      */
     private String shippingWarehouse;
 
-<<<<<<< HEAD
     /**
      * 显示页码
      */
@@ -258,8 +237,5 @@ public class Product implements Serializable {
 
 
 
-=======
 
-    private static final long serialVersionUID = 1L;
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
 }

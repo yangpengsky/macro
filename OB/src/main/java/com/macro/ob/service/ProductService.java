@@ -1,9 +1,10 @@
 package com.macro.ob.service;
 
-<<<<<<< HEAD
 
+import com.macro.ob.pojo.Page;
 import com.macro.ob.pojo.Product;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,21 +34,8 @@ public interface ProductService {
      * @return
      */
     Map<String,Object> selectProductByOrderCode(Integer orderCode);
-=======
-import com.macro.ob.pojo.Page;
-import com.macro.ob.pojo.Product;
-import org.apache.ibatis.annotations.Param;
-
-import java.util.List;
-import java.util.Map;
 
 
-/**
-* @author HP
-* @description 针对表【product(产品表)】的数据库操作Service
-* @createDate 2022-09-05 10:14:38
-*/
-public interface ProductService{
     /**
      * 按照条件查询可售产品信息
      */
@@ -67,5 +55,5 @@ public interface ProductService{
      * 批量删除可售产品信息
      */
     Map<String, Object> delProductAll(List<Product> products);
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
+
 }

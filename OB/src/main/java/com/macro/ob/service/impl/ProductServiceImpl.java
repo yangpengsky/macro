@@ -1,58 +1,31 @@
 package com.macro.ob.service.impl;
 
-<<<<<<< HEAD
-import com.github.pagehelper.Page;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.macro.ob.mapper.ProductMapper;
-import com.macro.ob.pojo.Product;
-import com.macro.ob.service.ProductService;
-import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
-=======
-
-import com.github.pagehelper.PageHelper;
-import com.macro.ob.mapper.WarehouseInfoMapper;
 import com.macro.ob.pojo.Page;
 import com.macro.ob.pojo.Product;
-import com.macro.ob.pojo.WarehouseInfo;
 import com.macro.ob.service.ProductService;
-import com.macro.ob.mapper.ProductMapper;
-import org.springframework.beans.factory.support.ManagedMap;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
+import org.springframework.beans.factory.support.ManagedMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 /**
-<<<<<<< HEAD
 * @author huangguo
 * @description 针对表【product(产品表)】的数据库操作Service实现
 * @createDate 2022-09-02 23:10:27
 */
 @Service
 public class ProductServiceImpl implements ProductService{
-=======
-* @author HP
-* @description 针对表【product(产品表)】的数据库操作Service实现
-* @createDate 2022-09-05 10:14:38
-*/
-@Service
-public class ProductServiceImpl implements ProductService {
-    /**
-     * 创建Product对象
-     */
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
+
     @Resource
     private ProductMapper productMapper;
 
     /**
-<<<<<<< HEAD
      * OB运营后台：按条件查询产品信息
      **/
     @Override
@@ -60,7 +33,7 @@ public class ProductServiceImpl implements ProductService {
         Map<String, Object> map = new HashMap<>();
         PageHelper.startPage(product.getPageNum(), product.getPageSize());
         List<Product> list = productMapper.selectAllByCondition(product);
-        PageInfo pageInfo =new PageInfo(list);
+        PageInfo pageInfo = new PageInfo(list);
         if (list.size() > 0) {
             map.put("code", list.size());
             map.put("info", pageInfo);
@@ -69,7 +42,12 @@ public class ProductServiceImpl implements ProductService {
             map.put("code", list.size());
             map.put("info", pageInfo);
             map.put("message", "查询失败！");
-=======
+
+        }
+        return map;
+    }
+
+    /*
      * 按照条件查询可售产品信息
      */
     public Map<String, Object> selectProductByCondition(Product product, Page page) {
@@ -89,26 +67,28 @@ public class ProductServiceImpl implements ProductService {
         } else {
             map.put("message", "查询失败");
             map.put("info", products);
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
         }
         return map;
     }
 
     /**
-<<<<<<< HEAD
      * OB运营后台：溢价维护，修改溢价
      **/
     @Override
     public Map<String, Object> updateAllByProductCode(Product product) {
-        Map<String,Object> map= new HashMap<>();
-        if (productMapper.updateAllByProductCode(product)>0){
+        Map<String, Object> map = new HashMap<>();
+        if (productMapper.updateAllByProductCode(product) > 0) {
             map.put("code", 1);
             map.put("message", "添加溢价信息成功！");
-        }else {
+        } else {
             map.put("code", 0);
             map.put("message", "添加溢价信息失败！");
         }
-=======
+        return map;
+    }
+
+
+    /*
      * 添加可售产品信息
      */
     public Map<String, Object> addProduct(List<Product> pro) {
@@ -130,12 +110,10 @@ public class ProductServiceImpl implements ProductService {
             }
         }
         map.put("product", pro);
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
         return map;
     }
 
     /**
-<<<<<<< HEAD
      * OB运营后台：查看溢价历史记录
      **/
     @Override
@@ -173,7 +151,10 @@ public class ProductServiceImpl implements ProductService {
         return map;
     }
 
-=======
+
+
+
+    /*
      * 按照仓库编码删除单个仓库信息
      */
     public Map<String, Object> delProductById(Product product){
@@ -200,5 +181,5 @@ public class ProductServiceImpl implements ProductService {
         }
         return map;
     }
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
+
 }

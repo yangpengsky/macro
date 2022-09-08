@@ -1,34 +1,23 @@
 package com.macro.ob.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-<<<<<<< HEAD
-import com.macro.ob.pojo.Orders;
-import com.macro.ob.pojo.Product;
-import org.apache.ibatis.annotations.Mapper;
-=======
 import com.macro.ob.pojo.Product;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
+
 
 import java.util.List;
 
 /**
-<<<<<<< HEAD
 * @author huangguo
 * @description 针对表【product(产品表)】的数据库操作Mapper
 * @createDate 2022-09-02 23:10:27
-=======
-* @author HP
-* @description 针对表【product(产品表)】的数据库操作Mapper
-* @createDate 2022-09-05 10:14:38
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
 * @Entity com.macro.ob.pojo.Product
 */
 @Mapper
 public interface ProductMapper extends BaseMapper<Product> {
+
     /**
-<<<<<<< HEAD
      * OB运营后台：按条件查询产品信息
      **/
     List<Product> selectAllByCondition(Product product);
@@ -50,8 +39,7 @@ public interface ProductMapper extends BaseMapper<Product> {
      */
     List<Product> selectProductByOrderCode(Integer orders);
 
-
-=======
+     /*
      * 按照条件查询可售产品信息
      */
     List<Product> selectProductByCondition(Product product);
@@ -66,7 +54,9 @@ public interface ProductMapper extends BaseMapper<Product> {
 
     /**
      * 批量删除可售产品信息
+     * @param products
+     * @return
      */
     int delProductAll(@Param("products") List<Product> products );
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
+
 }

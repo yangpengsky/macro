@@ -1,12 +1,14 @@
 package com.macro.ob.controller;
 
-<<<<<<< HEAD
 
+
+import com.macro.ob.pojo.Page;
 import com.macro.ob.pojo.Product;
 import com.macro.ob.service.ProductService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin
@@ -53,31 +55,7 @@ public class ProductController {
 
     }
 
-=======
-import com.macro.ob.pojo.Page;
-import com.macro.ob.pojo.Product;
-import com.macro.ob.pojo.WarehouseInfo;
-import com.macro.ob.service.ProductService;
-import com.macro.ob.service.WarehouseInfoService;
-import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-/**
- * 产品信息表的控制层实现
- */
-@CrossOrigin
-@RestController
-@RequestMapping(value = "/product")
-public class ProductController {
-    /**
-     * 创建产品信息业务层对象
-     */
-    @Resource
-    private ProductService productService;
     /**
      * 查询可售产品信息方法
      */
@@ -111,5 +89,7 @@ public class ProductController {
     public Map<String, Object> delProductAll(@RequestBody List<Product> products){
         return productService.delProductAll(products);
     }
->>>>>>> 281bbe495073b2fb1cc742b83631c0a792f6fecd
+
+
+
 }
