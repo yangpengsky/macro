@@ -133,4 +133,24 @@
         where product_code=#{productCode}
     </select>
 
+    <select id="selectProductByOrderCode" resultMap="BaseResultMap">
+        select  p.product_code,product_line,product_name,
+                product_abbreviation,uom_code,uom_name,
+                specifications,category_code,category_name,
+                product_model,aftersales_model,product_color,
+                bar_code,retail_price,pickup_price,
+                ticket_price,standard_price,premium_ratio,
+                premium_limit,effective_date,expiration_time,
+                modify_time,modify_by,sales_attributes,
+                gas_species,product_attributes,volume,
+                weight,length,width,
+                height,isnew_product,issales,
+                isstop_production,issuspend_production,create_time,
+                update_time,remarks,product_status,
+                shipping_warehouse
+        from product as p, order_product as op
+        where op.order_code=#{orderCode};
+    </select>
+
+
 </mapper>

@@ -5,6 +5,7 @@ import com.macro.ob.service.OrdersService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -35,13 +36,23 @@ public class OrderController {
 
 
     /**
-     * 初审核
+     * 初审核通过
      * @param orders
      * @return
      */
-    @PostMapping("/updateOrderBy")
+    @PutMapping("/updateOrderPass")
     public Map<String,Object> updateOrderBy(@RequestBody Orders orders){
-        return ordersService.updateOrderBy(orders);
+        return ordersService.updateOrderPass(orders);
+    }
+
+    /**
+     * 初审核通过
+     * @param orders
+     * @return
+     */
+    @PutMapping("/updateOrderNoPass")
+    public Map<String,Object> updateOrderNoPass(@RequestBody Orders orders ){
+        return ordersService.updateOrderNoPass(orders);
     }
 
     /**
@@ -56,6 +67,17 @@ public class OrderController {
     }
 
 
+    /**
+     * 导出表格
+     * @param orders
+     * @return
+     */
+    @PostMapping("/exportTable")
+    public Map<String,Object> exportTable(@RequestBody Orders orders) throws IOException {
+        System.out.println(orders);
+        System.out.println("yangpeng");
+        return ordersService.exportTable(orders);
+    }
 
 
 }

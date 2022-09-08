@@ -1,6 +1,7 @@
 package com.macro.ob.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.macro.ob.pojo.Orders;
 import com.macro.ob.pojo.Product;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -28,6 +29,13 @@ public interface ProductMapper extends BaseMapper<Product> {
      * OB运营后台：查看溢价历史记录
      **/
     List<Product> selectRecordsByChange(Product product);
+
+    /**
+     * OB运营后台：根据订单编号查询产品信息
+     * @param orders
+     * @return
+     */
+    List<Product> selectProductByOrderCode(Integer orders);
 
 
 }

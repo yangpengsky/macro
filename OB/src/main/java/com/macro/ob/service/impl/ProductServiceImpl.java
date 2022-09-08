@@ -79,4 +79,23 @@ public class ProductServiceImpl implements ProductService{
         return map;
     }
 
+    @Override
+    public Map<String, Object> selectProductByOrderCode(Integer orderCode) {
+        List<Product> list = productMapper.selectProductByOrderCode(orderCode);
+        Map<String, Object> map = new HashMap<>();
+                 if (list.size()>0){
+                     map.put("code", 0);
+                     map.put("flag", true);
+                     map.put("row",list.size());
+                     map.put("info", list);
+                     map.put("message", "查询成功！");
+                 }else {
+
+                     map.put("code", 0);
+                     map.put("flag", false);
+                     map.put("message", "查询失败！");
+                 }
+        return map;
+    }
+
 }

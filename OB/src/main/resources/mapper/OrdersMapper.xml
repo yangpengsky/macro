@@ -44,6 +44,8 @@
         updated_time,summary_plan_code
     </sql>
 
+
+
     <select id="selectOrderIF" parameterType="orders" resultMap="BaseResultMap">
         select order_code
         ,order_type,order_status,
@@ -74,18 +76,31 @@
             <if test="dealerCode != null">
                 and o.dealer_code=#{dealerCode}
             </if>
-            and order_status="提交"
+--             and order_status="提交"
         </where>
         order by created_time asc
     </select>
 
 
 
-    <update id="updateOrderBy" parameterType="orders">
+    <update id="updateOrderPass" parameterType="orders">
         update orders
         set
         order_status ="待上传附件",
         OB_order_status="已审核"
+        <where>
+            order_code in
+            <foreach collection="codes" close=")" separator="," item="code" open="(" index="index">
+                #{code}
+            </foreach>
+        </where>
+    </update>
+
+    <update id="updateOrderNoPass" parameterType="orders">
+        update orders
+        set
+        order_status ="已驳回",
+        OB_order_status="已驳回"
         <where>
             order_code in
             <foreach collection="codes" close=")" separator="," item="code" open="(" index="index">
@@ -112,6 +127,7 @@
             </if>
         </where>
     </select>
+
 
 
 </mapper>

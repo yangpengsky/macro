@@ -25,4 +25,11 @@ public interface ProductService {
      * OB运营后台：查看溢价历史记录
      **/
     Map<String,Object> selectRecordsByChange(Product product);
+
+    /**
+     * OB运营后台：根据订单编号查看产品信息
+     * @param orderCode
+     * @return
+     */
+    Map<String,Object> selectProductByOrderCode(Integer orderCode);
 }

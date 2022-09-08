@@ -27,7 +27,14 @@ public interface OrdersMapper extends BaseMapper<Orders> {
      * @param orders
      * @return
      */
-    int updateOrderBy(Orders orders);
+    int updateOrderPass(Orders orders);
+
+    /**
+     *将订单状态改为已驳回
+     * @param orders
+     * @return
+     */
+    int updateOrderNoPass(Orders orders);
 
     /**
      * 查看订单详情
@@ -35,5 +42,7 @@ public interface OrdersMapper extends BaseMapper<Orders> {
      * @return
      */
     List<Orders> selectOrderByOrderCode(Orders orders);
+
+
 
 }
