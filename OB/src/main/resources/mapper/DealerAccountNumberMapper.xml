@@ -8,7 +8,7 @@
             <result property="userName" column="user_name" jdbcType="VARCHAR"/>
             <result property="dealerName" column="dealer_name" jdbcType="VARCHAR"/>
             <result property="contacts" column="contacts" jdbcType="VARCHAR"/>
-            <result property="phoneNumber" column="phone_number" jdbcType="INTEGER"/>
+            <result property="phoneNumber" column="phone_number" jdbcType="VARCHAR"/>
             <result property="email" column="email" jdbcType="VARCHAR"/>
             <result property="remarks" column="remarks" jdbcType="VARCHAR"/>
             <result property="dealerStatus" column="dealer_status" jdbcType="VARCHAR"/>
@@ -80,5 +80,11 @@
         </where>
     </select>
 
+    <!-- 登录查询 -->
+    <select id="selectDealerAccountNumberInfoByUserName" parameterType="com.macro.ob.pojo.DealerAccountNumber" resultMap="BaseResultMap">
+        select user_name,password
+        from macrodb.dealer_account_number
+        where user_name=#{userName};
+    </select>
 
 </mapper>

@@ -37,7 +37,6 @@ public class OperatingAccountServiceImpl implements OperatingAccountService{
         }
         return map;
     }
-
     @Override
     public Map<String, Object> removeOperatingAccountInfoById(OperatingAccount operatingAccount) {
         Map<String,Object> map = new HashMap<>();
@@ -54,7 +53,6 @@ public class OperatingAccountServiceImpl implements OperatingAccountService{
         }
         return map;
     }
-
     @Override
     public Map<String, Object> alterOperatingAccountInfoById(OperatingAccount operatingAccount) {
         Map<String,Object> map = new HashMap<>();

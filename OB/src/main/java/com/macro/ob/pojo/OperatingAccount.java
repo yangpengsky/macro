@@ -73,7 +73,7 @@ public class OperatingAccount implements Serializable {
     /**
      * 手机号码
      */
-    private Integer phoneNumber;
+    private String phoneNumber;
 
     /**
      * 状态

@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00501a46-a1b4-40b7-b5b2-a1a7e409a9ca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/controller/DealerAccountNumberController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/controller/DealerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/controller/OperatingAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/controller/OperatingAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/DealerMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/DealerMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/OperatingAccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/OperatingAccountMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/pojo/Dealer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/pojo/Dealer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/DealerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/DealerService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/OperatingAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/OperatingAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/OBApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/OBApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/DealerAccountNumberMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/mapper/DealerAccountNumberMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/pojo/DealerAccountNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/pojo/DealerAccountNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/pojo/OperatingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/pojo/OperatingAccount.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/DealerAccountNumberServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/DealerAccountNumberServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/DealerServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/DealerServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/OperatingAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/OperatingAccountServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DealerMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/DealerMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/DealerAccountNumberMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/DealerAccountNumberMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/mapper/OperatingAccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mapper/OperatingAccountMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -45,8 +41,9 @@
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="E:\apache-maven-3.6.0" />
-        <option name="userSettingsFile" value="F:\mvn\apache-maven-3.6.3\conf\settings.xml" />
+        <option name="mavenHome" value="E:/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="E:\apache-maven-3.6.0\conf\settings.xml" />
+        <option name="workOffline" value="true" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -72,7 +69,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="Errors" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -80,7 +77,7 @@
       <recent name="E:\aStudyNotes\Object\OB\src\main\java\com\macro\ob\config" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.OBApplication">
+  <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
@@ -92,20 +89,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OBApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <configuration name="OBApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="OB" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.macro.ob.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.macro.ob.OBApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OCPApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="OCP" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.macro.ocp.OCPApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.OBApplication" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -124,7 +125,13 @@
       <workItem from="1662077619825" duration="38000" />
       <workItem from="1662085743300" duration="28750000" />
       <workItem from="1662339414069" duration="26257000" />
-      <workItem from="1662512455575" duration="16620000" />
+      <workItem from="1662512455575" duration="17407000" />
+      <workItem from="1662549952658" duration="4292000" />
+      <workItem from="1662554291135" duration="503000" />
+      <workItem from="1662554811489" duration="567000" />
+      <workItem from="1662555500894" duration="1301000" />
+      <workItem from="1662556851956" duration="6451000" />
+      <workItem from="1662598965429" duration="24000" />
     </task>
     <servers />
   </component>

@@ -38,7 +38,7 @@ public class DealerAccountNumber implements Serializable {
     /**
      * 手机号码
      */
-    private Integer phoneNumber;
+    private String phoneNumber;
 
     /**
      * 电子邮箱

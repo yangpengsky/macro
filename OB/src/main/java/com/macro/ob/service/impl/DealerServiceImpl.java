@@ -5,7 +5,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.macro.ob.mapper.DealerMapper;
 import com.macro.ob.pojo.Dealer;
-import com.macro.ob.pojo.DealerAccountNumber;
 import com.macro.ob.service.DealerService;
 import org.springframework.stereotype.Service;
 
@@ -23,7 +22,6 @@ import java.util.Map;
 public class DealerServiceImpl implements DealerService{
     @Resource
     private DealerMapper dealerMapper;
-
     @Override
     public Map<String, Object> queryDealerInfoByLike(Dealer dealer) {
         Map<String,Object> map = new HashMap<>();

@@ -38,4 +38,11 @@ public interface DealerAccountNumberMapper extends BaseMapper<DealerAccountNumbe
      */
     List<DealerAccountNumber> selectDealerAccountNumberInfoByLike(DealerAccountNumber dealerAccountNumber);
 
+    /**
+     * 查询经销商的用户名
+     * @param dealerAccountNumber
+     * @return
+     */
+    List<DealerAccountNumber> selectDealerAccountNumberInfoByUserName(DealerAccountNumber dealerAccountNumber);
+
 }

@@ -6,7 +6,6 @@ import com.macro.ob.mapper.DealerAccountNumberMapper;
 import com.macro.ob.pojo.DealerAccountNumber;
 import com.macro.ob.service.DealerAccountNumberService;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.List;
@@ -25,16 +24,21 @@ public class DealerAccountNumberServiceImpl implements DealerAccountNumberServic
     @Override
     public Map<String, Object> addDealerAccountNumberInfo(DealerAccountNumber dealerAccountNumber) {
         Map<String,Object> map = new HashMap<>();
-        Integer rows = dealerAccountNumberMapper.insertDealerAccountNumberInfo(dealerAccountNumber);
-        if (rows > 0){
-            map.put("code", 0);
-            map.put("flag", true);
-            map.put("rows",rows);
-            map.put("message", "经销商总账号添加成功！");
+        List<DealerAccountNumber> list = dealerAccountNumberMapper.selectDealerAccountNumberInfoByUserName(dealerAccountNumber);
+        if (list.size() > 0){
+            map.put("message", "用户名存在！");
         }else {
-            map.put("code", 1);
-            map.put("flag", false);
-            map.put("message", "经销商总账号添加失败！");
+            Integer rows = dealerAccountNumberMapper.insertDealerAccountNumberInfo(dealerAccountNumber);
+            if (rows > 0){
+                map.put("code", 0);
+                map.put("flag", true);
+                map.put("rows",rows);
+                map.put("message", "经销商总账号添加成功！");
+            }else {
+                map.put("code", 1);
+                map.put("flag", false);
+                map.put("message", "经销商总账号添加失败！");
+            }
         }
         return map;
     }
