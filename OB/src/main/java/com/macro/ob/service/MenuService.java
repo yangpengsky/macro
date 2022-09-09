@@ -17,4 +17,23 @@ public interface MenuService {
      */
     Map<String,Object> selectAllByMenuName(Menu menu);
 
+    /*
+     * OB运营后台：菜单管理,添加菜单
+     */
+    Map<String,Object> insertAllMenu(Menu menu);
+
+    /*
+     * OB运营后台：菜单管理,删除单个菜单
+     */
+    Map<String,Object> deleteByMenuId(Menu menu);
+
+    /*
+     * OB运营后台：菜单管理,删除多个菜单
+     */
+    Map<String,Object> deleteAllByMenuId(Integer[] menuId);
+
+    /*
+     * OB运营后台：菜单管理,修改菜单
+     */
+    Map<String,Object> updateByMenuId(Menu menu);
 }

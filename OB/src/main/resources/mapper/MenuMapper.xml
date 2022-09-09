@@ -39,4 +39,41 @@
     </select>
 
 
+<!--OB运营后台：菜单管理,添加菜单-->
+    <insert id="insertAllMenu" parameterType="com.macro.ob.pojo.Menu">
+        insert into menu(menu_id,menu_name,menu_logo,
+            menu_url,resources,icon,order_number)
+        values (#{menuId},#{menuName},#{menuLogo},#{menuUrl},
+                #{resources},#{icon},#{orderNumber})
+    </insert>
+
+<!--OB运营后台：菜单管理,删除单个菜单-->
+    <delete id="deleteByMenuId" parameterType="com.macro.ob.pojo.Menu">
+        delete from menu where menu_id=#{menuId}
+    </delete>
+<!--OB运营后台：菜单管理,删除多个菜单-->
+    <delete id="deleteAllByMenuId" parameterType="com.macro.ob.pojo.Menu">
+        delete from menu
+        <where>
+            menu_id in
+            <foreach collection="menuId" item="item" open="(" close=")" separator=",">
+                #{item}
+            </foreach>
+        </where>
+    </delete>
+
+<!--OB运营后台：菜单管理,修改菜单-->
+    <update id="updateByMenuId" parameterType="com.macro.ob.pojo.Menu">
+        update menu
+        <trim prefix="set" suffixOverrides="," prefixOverrides="">
+            <if test="menuName      != null">menu_name=#{menuName},</if>
+            <if test="menuLogo      != null">menu_logo=#{menuLogo},</if>
+            <if test="menuUrl       != null">menu_url=#{menuUrl},</if>
+            <if test="resources     != null">resources=#{resources},</if>
+            <if test="icon          != null">icon=#{icon},</if>
+            <if test="orderNumber   != null">order_number=#{orderNumber}</if>
+        </trim>
+        where menu_id = #{menuId}
+    </update>
+
 </mapper>

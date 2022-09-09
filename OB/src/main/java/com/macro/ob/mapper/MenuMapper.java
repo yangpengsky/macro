@@ -20,4 +20,23 @@ public interface MenuMapper {
     */
     List<Menu> selectAllByMenuName(Menu menu);
 
+    /*
+     * OB运营后台：菜单管理,添加菜单
+     */
+    Integer insertAllMenu(Menu menu);
+
+    /*
+     * OB运营后台：菜单管理,删除单个菜单
+     */
+    Integer deleteByMenuId(Menu menu);
+
+    /*
+     * OB运营后台：菜单管理,删除多个菜单
+     */
+    Integer deleteAllByMenuId(Integer[] menuId);
+
+    /*
+     * OB运营后台：菜单管理,修改菜单
+     */
+    Integer updateByMenuId(Menu menu);
 }
