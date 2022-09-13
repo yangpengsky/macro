@@ -6,6 +6,7 @@ spring:
    multipart:  #设置文件大小上传限制
      max-file-size: 3000MB
      max-request-size: 4000MB
+     #连接mycat
  datasource:
    driver-class-name: com.mysql.cj.jdbc.Driver
    url: jdbc:mysql://43.143.183.233:8066/TESTDB?allowPublicKeyRetrieval=true&characterEncoding=UTF-8&useSSL=false
@@ -30,7 +31,8 @@ spring:
    mvc:
      format:
        #      将前端传过来的时间格式化
-       date: yyyy-MM-dd HH:mm:ss
+       date: yyyy-MM-dd
+
 
 
 mybatis-plus:
@@ -63,3 +65,4 @@ pagehelper:
 String:
   ordinaryHomePage: "普通公告"
   urgentHomePage: "紧急公告"
+  requisitionType: "电商备货调拨"

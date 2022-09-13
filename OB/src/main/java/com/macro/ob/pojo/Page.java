@@ -6,8 +6,8 @@ import lombok.NoArgsConstructor;
 import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
-
 import java.io.Serializable;
+
 @Data
 @ToString
 @AllArgsConstructor
@@ -25,4 +25,5 @@ public class Page implements Serializable {
     private Integer pageSize;
 
     private static final long serialVersionUID = 9142779484796954556L;
+
 }

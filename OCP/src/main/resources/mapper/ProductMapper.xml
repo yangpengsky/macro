@@ -23,7 +23,7 @@
             <result property="ticketPrice" column="ticket_price" jdbcType="DECIMAL"/>
             <result property="standardPrice" column="standard_price" jdbcType="DECIMAL"/>
             <result property="premiumRatio" column="premium_ratio" jdbcType="DECIMAL"/>
-            <result property="premiumLimit" column="premium_limit" jdbcType="VARCHAR"/>
+            <result property="premiumLimit" column="premium_limit" jdbcType="DECIMAL"/>
             <result property="effectiveDate" column="effective_date" jdbcType="TIMESTAMP"/>
             <result property="expirationTime" column="expiration_time" jdbcType="TIMESTAMP"/>
             <result property="modifyTime" column="modify_time" jdbcType="TIMESTAMP"/>
@@ -63,4 +63,40 @@
         update_time,remarks,product_status,
         shipping_warehouse
     </sql>
+
+<!--OCP经销商系统：按条件查询产品信息-->
+    <select id="selectByCondition" resultMap="BaseResultMap">
+        select product_code,product_model,product_name,category_name,bar_code,uom_name,specifications,retail_price,ticket_price
+        from product
+        <where>
+            <if test="productCode !=null">
+                product_code=#{productCode}
+            </if>
+            <if test="productName !=null">
+                and product_name like CONCAT("%",#{productName},"%")
+                or getPY(product_name) like CONCAT(#{productName},"%")
+                or to_pinyin(product_name) like CONCAT(#{productName},"%")
+            </if>
+            <if test="categoryName !=null">
+                and category_name like CONCAT("%",#{categoryName},"%")
+                or getPY(category_name) like CONCAT(#{categoryName},"%")
+                or to_pinyin(category_name) like CONCAT(#{categoryName},"%")
+            </if>
+            <if test="productModel !=null">
+                and product_model like CONCAT("%",#{productModel},"%")
+            </if>
+        </where>
+    </select>
+
+<!--OCP经销商系统：通过产品编号查询产品信息-->
+    <select id="selectByProductCode" resultMap="BaseResultMap">
+        select product_code,product_model,product_name,category_name,retail_price,pickup_price,ticket_price,uom_name,specifications,weight,volume,length,width,shipping_warehouse,expiration_time,aftersales_model
+        from product
+        <where>
+            <if test="productCode">
+            product_code=#{productCode}
+            </if>
+        </where>
+    </select>
+
 </mapper>

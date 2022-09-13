@@ -1,8 +1,12 @@
 package com.macro.ocp.pojo;
 
+
+import com.baomidou.mybatisplus.annotation.TableField;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -14,17 +18,19 @@ import java.util.Date;
  * 订单表
  * @TableName orders
  * @author zhangkein
+ * @date 2022/09/02
  */
-@Component
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@ConfigurationProperties(prefix = "orders")
+@Component
+@ToString
+@ConfigurationProperties(prefix ="orders")
 public class Orders implements Serializable {
     /**
-     * 序列号
+     * 序列化ID
      */
-    private static final long serialVersionUID = -7543167542392584612L;
+    private static final long serialVersionUID = 1433195924491995575L;
     /**
      * 订单编号
      */
@@ -39,16 +45,15 @@ public class Orders implements Serializable {
      * 订单状态
      */
     private String orderStatus;
+    /**
+     * OB系统订单状态
+     */
+    private String obOrderStatus;
 
     /**
      * 提货方式
      */
     private String deliveryMethod;
-
-    /**
-     * 产品编码
-     */
-    private Integer productCode;
 
     /**
      * 出库仓库
@@ -123,6 +128,8 @@ public class Orders implements Serializable {
     /**
      * 下单日期
      */
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createdTime;
 
     /**
@@ -133,10 +140,50 @@ public class Orders implements Serializable {
     /**
      * 更新时间
      */
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date updatedTime;
 
     /**
      * 汇总计划编号
      */
     private Integer summaryPlanCode;
+
+    /**
+     * 产品编号数组
+     */
+    @TableField(exist = false)
+    private Integer[] productCodes;
+    /**
+     * （用于查询） 开始查询时间
+     */
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date startTime;
+    /**
+     * （用于查询） 结束查询时间
+     */
+    @TableField(exist = false)
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date endTime;
+    /**
+     * （用于查询） 开始范围的金额
+     */
+    @TableField(exist = false)
+    private Double startAggregateAmount;
+    /**
+     * （用于查询） 结束范围金额
+     */
+    @TableField(exist = false)
+    private Double endAggregateAmount;
+    /**
+     * 查询的页数
+     */
+    @TableField(exist = false)
+    private Integer pageNum;
+    /**
+     * 查询的页面大小
+     */
+    @TableField(exist = false)
+    private Integer pageSize;
 }
