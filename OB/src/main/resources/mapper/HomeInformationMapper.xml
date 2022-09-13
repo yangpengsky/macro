@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.ob.mapper.HomeInformationMapper">
+
+    <resultMap id="BaseResultMap" type="com.macro.ob.pojo.HomeInformation">
+            <result property="informationTitle" column="information_title" jdbcType="VARCHAR"/>
+            <result property="informationType" column="information_type" jdbcType="VARCHAR"/>
+            <result property="publicationDate" column="publication_date" jdbcType="TIMESTAMP"/>
+            <result property="effectiveDate" column="effective_date" jdbcType="TIMESTAMP"/>
+            <result property="informationStatus" column="information_status" jdbcType="VARCHAR"/>
+            <result property="titlePicture" column="title_picture" jdbcType="VARCHAR"/>
+            <result property="informationSummary" column="information_summary" jdbcType="VARCHAR"/>
+            <result property="informationContent" column="information_content" jdbcType="VARCHAR"/>
+            <result property="views" column="views" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        information_title,information_type,publication_date,
+        effective_date,information_status,title_picture,
+        information_summary,information_content,views
+    </sql>
+    <!--新增资讯-->
+    <insert id="addHomeInformation">
+        insert into home_information(
+            information_type,information_title,
+            effective_date,information_status,
+            title_picture,information_summary,
+            information_content)
+        values(#{informationType},#{informationTitle},
+               #{effectiveDate},#{informationStatus},
+               #{titlePicture},#{informationSummary},
+               #{informationContent})
+    </insert>
+    <!--修改咨询-->
+    <update id="updateHomeInformationById">
+        update home_information
+        <set>
+            <if test="informationType != null and informationType != ''">
+                information_type = #{informationType},
+            </if>
+            <if test="informationTitle != null and informationTitle != ''">
+                information_title = #{informationTitle},
+            </if>
+            <if test="effectiveDate != null">
+                effective_date = #{effectiveDate},
+            </if>
+            <if test="expirationDate != null">
+                expiration_date = #{expirationDate},
+            </if>
+            <if test="titlePicture != null and titlePicture != ''">
+                title_picture = #{titlePicture},
+            </if>
+            <if test="informationSummary != null and informationSummary != ''">
+                information_summary = #{informationSummary},
+            </if>
+            <if test="informationContent != null and informationContent != ''">
+                information_content = #{informationContent}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--删除咨询-->
+    <delete id="delHomeInformationById">
+        delete from home_information where id = #{id}
+    </delete>
+    <!--查看咨询-->
+    <select id="selectHomeInformation" resultMap="BaseResultMap">
+        select information_type,information_title,
+               effective_date,expiration_date,
+               title_picture,information_summary,
+               information_content
+        from home_information
+        where id = #{id}
+    </select>
+</mapper>
