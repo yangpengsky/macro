@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.ob.mapper.MenuMapper">
+
+    <resultMap id="BaseResultMap" type="com.macro.ob.pojo.Menu">
+            <id property="menuId" column="menu_id" jdbcType="INTEGER"/>
+            <result property="menuName" column="menu_name" jdbcType="VARCHAR"/>
+            <result property="menuLogo" column="menu_logo" jdbcType="VARCHAR"/>
+            <result property="menuUrl" column="menu_url" jdbcType="VARCHAR"/>
+            <result property="resources" column="resources" jdbcType="VARCHAR"/>
+            <result property="icon" column="icon" jdbcType="VARCHAR"/>
+            <result property="orderNumber" column="order_number" jdbcType="INTEGER"/>
+            <result property="resourceId" column="resource_id" jdbcType="INTEGER"/>
+            <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+            <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        menu_id,menu_name,menu_logo,
+        menu_url,resources,icon,
+        order_number,resource_id,created_time,
+        updated_time
+    </sql>
+
+<!--OB运营后台：菜单管理,查询所有菜单信息-->
+    <select id="selectAllByMenuName" resultMap="BaseResultMap">
+        select menu_id,menu_name,menu_logo,
+               menu_url,resources,icon,
+               order_number
+        from menu
+        <where>
+            <if test="menuName !=null ">
+                menu_name like CONCAT("%",#{menuName},"%")
+                or getPY(menu_name) like CONCAT(#{menuName},"%")
+            </if>
+        </where>
+    </select>
+
+
+</mapper>
