@@ -61,3 +61,9 @@ pagehelper:
   # 用于控制默认不带 count 查询的方法中，是否执行 count 查询，这里设置为true后，total会为-1
   default-count: false
 
+String:
+  ordinaryHomePage: "普通公告"
+  urgentHomePage: "紧急公告"
+  requisitionType: "电商备货调拨"
+
+

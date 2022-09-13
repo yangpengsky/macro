@@ -4,6 +4,7 @@ import com.macro.ob.mapper.RequisitionInfoMapper;
 import com.macro.ob.pojo.Page;
 import com.macro.ob.pojo.RequisitionInfo;
 import com.macro.ob.service.RequisitionInfoService;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.HashMap;
@@ -15,6 +16,7 @@ import java.util.Map;
 * @description 针对表【requisition_info(调拨单信息)】的数据库操作Service实现
 * @createDate 2022-09-05 10:23:20
 */
+
 @Service
 public class RequisitionInfoServiceImpl implements RequisitionInfoService{
    @Resource
@@ -31,6 +33,7 @@ public class RequisitionInfoServiceImpl implements RequisitionInfoService{
         if(page.getPageSize()==null){
             page.setPageSize(10);
         }
+
         PageHelper.startPage(page.getPageNum(), page.getPageSize());
         List<RequisitionInfo>list =requisitionInfoMapper.RequisitionInfoSelect(requisitionInfo);
         if(list.size()!=0){
@@ -63,9 +66,22 @@ public class RequisitionInfoServiceImpl implements RequisitionInfoService{
     /**
      *制定调拨单
      */
+    @Value("${String.requisitionType}")
+    private String requisitionType;
     @Override
     public Map<String,Object> selectInWarehouseName(RequisitionInfo requisitionInfo) {
         Map<String,Object>map=new HashMap<>();
+        /**
+         *判断调拨类型是否为电商备货调拨
+         */
+        if (requisitionInfo.getRequisitionType()==requisitionType){
+
+
+
+
+
+
+        }
         /**
          *判断输入值是否为空
          */

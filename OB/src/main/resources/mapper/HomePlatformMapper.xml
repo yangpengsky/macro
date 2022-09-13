@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.ob.mapper.HomePlatformMapper">
+
+    <resultMap id="BaseResultMap" type="com.macro.ob.pojo.HomePlatform">
+            <result property="platformName" column="platform_name" jdbcType="VARCHAR"/>
+            <result property="platformAddress" column="platform_address" jdbcType="VARCHAR"/>
+            <result property="platformPicture" column="platform_picture" jdbcType="VARCHAR"/>
+            <result property="platformStatus" column="platform_status" jdbcType="VARCHAR"/>
+            <result property="id" column="id" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        platform_name,platform_address,platform_picture,
+        platform_status,id
+    </sql>
+   <select id="selectInfo" resultType="HomePlatform">
+       select platform_name,platform_address,platform_picture,
+              platform_status
+       from home_platform
+   </select>
+    <insert id="addInfo" parameterType="HomePlatform">
+        insert into home_platform(platform_name,platform_address,platform_picture,
+                                  platform_status)
+                                  values
+                                  (#{platformName},#{platformAddress},
+                                  #{platformPicture},#{platformStatus})
+    </insert>
+    <delete id="deleteInfo" parameterType="HomePlatform">
+        delete from home_platform where id=#{id}
+    </delete>
+    <update id="updateInfo" parameterType="HomePlatform" >
+        update home_platform set platform_name=#{platformName},platform_address=#{platformAddress},
+                                 platform_picture=#{platformPicture},platform_status=#{platformStatus}
+                                where id=#{id}
+    </update>
+</mapper>
