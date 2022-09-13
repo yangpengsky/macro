@@ -1,29 +1,69 @@
 package com.macro.ob.controller;
 
+
+
+import com.macro.ob.pojo.OperatingAccount;
 import com.macro.ob.pojo.Page;
 import com.macro.ob.pojo.Product;
-import com.macro.ob.pojo.WarehouseInfo;
 import com.macro.ob.service.ProductService;
-import com.macro.ob.service.WarehouseInfoService;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import java.util.HashMap;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 import java.util.Map;
 
-/**
- * 产品信息表的控制层实现
- */
 @CrossOrigin
 @RestController
-@RequestMapping(value = "/product")
+@RequestMapping("/ProductController")
 public class ProductController {
-    /**
-     * 创建产品信息业务层对象
-     */
     @Resource
     private ProductService productService;
+
+    /**
+     * OB运营后台：按条件查询产品信息
+     **/
+    @PostMapping("/selectAllByCondition")
+    Map<String,Object> selectByCondition(@RequestBody Product product){
+        return productService.selectAllByCondition(product);
+    }
+
+    /**
+     * OB运营后台：溢价维护，修改溢价
+     **/
+    @PutMapping("/updateAllByProductCode")
+    Map<String,Object> updateAllByProductCode(@RequestBody Product product, HttpServletRequest httpServletRequest){
+        HttpSession session = httpServletRequest.getSession();
+        Object info = session.getAttribute("info");
+        OperatingAccount operatingAccount = (OperatingAccount) info;
+        product.setModifyBy(operatingAccount.getUserName());
+        return productService.updateAllByProductCode(product);
+    }
+
+    /**
+     * OB运营后台：查看溢价历史记录
+     **/
+    @PostMapping("/selectRecordsByChange")
+    Map<String,Object> selectRecordsByChange(@RequestBody Product product){
+        return productService.selectRecordsByChange(product);
+    }
+
+
+    /**
+     * OB运营后台：根据订单编号查看产品信息
+     * @param orderCode
+     * @return
+     */
+    @PostMapping("/selectProductByOrderCode")
+    Map<String,Object> selectProductByOrderCode(@RequestBody  @RequestParam("orderCode") Integer orderCode){
+        String path = System.getProperty("user.dir");
+        System.out.println(path);
+        return productService.selectProductByOrderCode(orderCode);
+
+    }
+
+
     /**
      * 查询可售产品信息方法
      */
@@ -57,4 +97,7 @@ public class ProductController {
     public Map<String, Object> delProductAll(@RequestBody List<Product> products){
         return productService.delProductAll(products);
     }
+
+
+
 }

@@ -1,8 +1,10 @@
 package com.macro.ob.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.macro.ob.pojo.Orders;
 import com.macro.ob.pojo.Page;
 import com.macro.ob.pojo.RequisitionInfo;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.ArrayList;
 import java.util.List;

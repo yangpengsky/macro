@@ -1,9 +1,9 @@
-package com.macro.ob.pojo;
+package com.macro.ocp.pojo;
+
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -14,7 +14,7 @@ import java.util.Date;
 /**
  * 产品表
  * @TableName product
- * @author huangguo
+ * @Author huangguo
  */
 @Component
 @Data
@@ -22,8 +22,7 @@ import java.util.Date;
 @AllArgsConstructor
 @ConfigurationProperties(prefix = "product")
 public class Product implements Serializable {
-
-    private static final long serialVersionUID = 5215552995520692566L;
+    private static final long serialVersionUID = -1295177846520338890L;
     /**
      * 产品编码
      */
@@ -233,9 +232,6 @@ public class Product implements Serializable {
      * 显示条数
      */
     private Integer pageSize;
-
-
-
 
 
 }

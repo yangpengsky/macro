@@ -1,6 +1,8 @@
 package com.macro.ob.service;
 
 
+import com.macro.ob.pojo.MakeRequisition;
+import com.macro.ob.pojo.Orders;
 import com.macro.ob.pojo.Page;
 import com.macro.ob.pojo.RequisitionInfo;
 
@@ -14,7 +16,34 @@ import java.util.Map;
 * @createDate 2022-09-05 10:23:20
 */
 public interface RequisitionInfoService{
+  /**
+   *
+   * @param requisitionInfo
+   * @param page
+   * @return requisitionInfo
+   */
   Map<String,Object>RequisitionInfoSelect(RequisitionInfo requisitionInfo, Page page);
+
+  /**
+   *
+   * @param requisitionCode
+   * @return requisitionInfo
+   */
   Map<String,Object>ViewDetails(Integer requisitionCode);
-  Map<String,Object> selectInWarehouseName(RequisitionInfo requisitionInfo);
+
+  /**
+   *
+   * @param makeRequisition
+   * @return map
+   */
+  Map<String,Object> selectInWarehouseName(MakeRequisition makeRequisition);
+
+  /**
+   *
+   * @param requisitionInfo
+   * @param orders
+   * @return
+   */
+  Map<String,Object> selectStockingSchedule(RequisitionInfo requisitionInfo,Orders orders);
+
 }

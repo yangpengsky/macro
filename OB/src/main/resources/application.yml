@@ -31,7 +31,8 @@ spring:
    mvc:
      format:
        #      将前端传过来的时间格式化
-       date: yyyy-MM-dd HH:mm:ss
+       date: yyyy-MM-dd
+
 
 
 mybatis-plus:
@@ -62,8 +63,4 @@ pagehelper:
   default-count: false
 
 String:
-  ordinaryHomePage: "普通公告"
-  urgentHomePage: "紧急公告"
   requisitionType: "电商备货调拨"
-
-
