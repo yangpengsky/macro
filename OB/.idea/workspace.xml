@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="00501a46-a1b4-40b7-b5b2-a1a7e409a9ca" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="E:\Maven\apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="E:\Maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2E9o4itpGj0GoZeMXnkGwkvuMiI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../OCP" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="IntelliLang.Configuration" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\aStudyNotes\Object\OB\src\main\resources" />
+      <recent name="E:\aStudyNotes\Object\OB\src\main\java\com\macro\ob\config" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.OBApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OBApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="OB" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.macro.ob.OBApplication" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="UPDATE_ACTION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OCPApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="OCP" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.macro.ocp.OCPApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Spring Boot.OBApplication" />
+      <item itemvalue="Spring Boot.OCPApplication" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00501a46-a1b4-40b7-b5b2-a1a7e409a9ca" name="Default Changelist" comment="" />
+      <created>1662016973619</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1662016973619</updated>
+      <workItem from="1662016975012" duration="471000" />
+      <workItem from="1662098453633" duration="2801000" />
+      <workItem from="1662103903257" duration="3505000" />
+      <workItem from="1662107599595" duration="693000" />
+      <workItem from="1662108322087" duration="273000" />
+      <workItem from="1662108703459" duration="47000" />
+      <workItem from="1662108844457" duration="326000" />
+      <workItem from="1662109242331" duration="456000" />
+      <workItem from="1662109727841" duration="909000" />
+      <workItem from="1662110783708" duration="225000" />
+      <workItem from="1662111064313" duration="592000" />
+      <workItem from="1662111731074" duration="4723000" />
+      <workItem from="1662192798106" duration="66000" />
+      <workItem from="1662340147296" duration="193000" />
+      <workItem from="1662340429535" duration="51000" />
+      <workItem from="1662340881659" duration="6802000" />
+      <workItem from="1662347777077" duration="3616000" />
+      <workItem from="1662357930688" duration="762000" />
+      <workItem from="1662358779323" duration="389000" />
+      <workItem from="1662359313055" duration="16542000" />
+      <workItem from="1662383083332" duration="7000" />
+      <workItem from="1662473915353" duration="151000" />
+      <workItem from="1662516004916" duration="23000" />
+      <workItem from="1662516066998" duration="1275000" />
+      <workItem from="1662517427718" duration="1308000" />
+      <workItem from="1662518794268" duration="2530000" />
+      <workItem from="1662521436660" duration="729000" />
+      <workItem from="1662522240057" duration="48000" />
+      <workItem from="1662522329028" duration="2890000" />
+      <workItem from="1662531176117" duration="6641000" />
+      <workItem from="1662538380389" duration="4686000" />
+      <workItem from="1662543447390" duration="9535000" />
+      <workItem from="1662555551870" duration="21000" />
+      <workItem from="1662555705665" duration="319000" />
+      <workItem from="1662599522728" duration="25047000" />
+      <workItem from="1662650891203" duration="41000" />
+      <workItem from="1662685024397" duration="7443000" />
+      <workItem from="1662728609954" duration="560000" />
+      <workItem from="1662776114790" duration="59000" />
+      <workItem from="1662776191631" duration="46000" />
+      <workItem from="1663032882676" duration="55000" />
+      <workItem from="1663033897315" duration="3563000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/main/java/com/macro/ob/service/impl/HomePageServiceImpl.java</url>
+          <line>38</line>
+          <properties class="com.macro.ob.service.impl.HomePageServiceImpl" method="addHomePage">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

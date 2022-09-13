@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.ob.mapper.HomePageMapper">
+
+    <resultMap id="BaseResultMap" type="com.macro.ob.pojo.HomePage">
+            <result property="announcementTitle" column="announcement_title" jdbcType="VARCHAR"/>
+            <result property="publicationDate" column="publication_date" jdbcType="TIMESTAMP"/>
+            <result property="effectiveDate" column="effective_date" jdbcType="TIMESTAMP"/>
+            <result property="expirationDate" column="expiration_date" jdbcType="TIMESTAMP"/>
+            <result property="announcementStatus" column="announcement_status" jdbcType="VARCHAR"/>
+            <result property="announcementType" column="announcement_type" jdbcType="VARCHAR"/>
+            <result property="platformType" column="platform_type" jdbcType="VARCHAR"/>
+            <result property="announcementPicture" column="announcement_picture" jdbcType="VARCHAR"/>
+            <result property="announcementContents" column="announcement_contents" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        announcement_title,publication_date,effective_date,
+        expiration_date,announcement_status,announcement_type,
+        platform_type,announcement_picture,announcement_contents
+    </sql>
+    <!--添加普通公告信息-->
+    <insert id="addOrdinaryHomePage">
+        insert into home_page(
+        announcement_type,platform_type,
+        announcement_title,effective_date,
+        expiration_date,announcement_picture,
+        announcement_contents)
+        values(#{announcementType},#{platformType},
+               #{announcementTitle},#{effectiveDate},
+               #{expirationDate},#{announcementPicture},
+               #{announcementContents})
+    </insert>
+    <!--添加紧急公告信息-->
+    <insert id="addUrgentHomePage">
+        insert into home_page(
+            announcement_type,platform_type,
+            announcement_title,effective_date,
+            expiration_date)
+        values(#{announcementType},#{platformType},
+               #{announcementTitle},#{effectiveDate},
+               #{expirationDate})
+    </insert>
+    <!--修改普通公告信息-->
+    <update id="updateOrdinaryHomePage">
+        update home_page
+        <set>
+            <if test="announcementType != null and announcementType != ''">
+                announcement_type = #{announcementType},
+            </if>
+            <if test="platformType != null and platformType != ''">
+                platform_type = #{platformType},
+            </if>
+            <if test="announcementTitle != null and announcementTitle != ''">
+                announcement_title = #{announcementTitle},
+            </if>
+            <if test="effectiveDate != null and effectiveDate != ''">
+                effective_date = #{effectiveDate},
+            </if>
+            <if test="expirationDate != null and expirationDate != ''">
+                expiration_date = #{expirationDate},
+            </if>
+            <if test="announcementPicture != null and announcementPicture != ''">
+                announcement_picture = #{announcementPicture},
+            </if>
+            <if test="announcementContents != null and announcementContents != ''">
+                announcement_contents = #{announcementContents},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--修改紧急公告信息-->
+    <update id="updateUrgentHomePage">
+        update home_page
+        <set>
+            <if test="announcementType != null and announcementType != ''">
+                announcement_type = #{announcementType},
+            </if>
+            <if test="platformType != null and platformType != ''">
+                platform_type = #{platformType},
+            </if>
+            <if test="announcementTitle != null and announcementTitle != ''">
+                announcement_title = #{announcementTitle},
+            </if>
+            <if test="effectiveDate != null and effectiveDate != ''">
+                effective_date = #{effectiveDate},
+            </if>
+            <if test="expirationDate != null and expirationDate != ''">
+                expiration_date = #{expirationDate},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <!--删除公告信息-->
+    <delete id="delHomePage">
+        delete from home_page where id = #{id}
+    </delete>
+    <!--查看普通公告信息-->
+    <select id="selectOrdinaryHomePage" resultMap="BaseResultMap">
+        select announcement_type,platform_type,
+               announcement_title,effective_date,
+               expiration_date,announcement_picture,
+               announcement_contents
+        from home_page
+        where id = #{id}
+    </select>
+    <!--查看紧急公告信息-->
+    <select id="selectUrgentHomePage" resultMap="BaseResultMap">
+        select announcement_type,platform_type,
+               announcement_title,effective_date,
+               expiration_date
+        from home_page
+        where id = #{id}
+    </select>
+</mapper>
