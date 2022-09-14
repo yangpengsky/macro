@@ -29,9 +29,11 @@ spring:
      write-numbers-as-strings: true
 
    mvc:
+     pathmatch:
+       matching-strategy: ant_path_matcher
      format:
        #      将前端传过来的时间格式化
-       date: yyyy-MM-dd
+       date: yyyy-MM-dd HH:mm:ss
 
 
 
@@ -66,3 +68,4 @@ String:
   ordinaryHomePage: "普通公告"
   urgentHomePage: "紧急公告"
   requisitionType: "电商备货调拨"
+

@@ -28,6 +28,8 @@ spring:
      write-numbers-as-strings: true
 
    mvc:
+     pathmatch:
+       matching-strategy: ant_path_matcher
      format:
        #      将前端传过来的时间格式化
        date: yyyy-MM-dd HH:mm:ss

@@ -11,6 +11,7 @@ import java.util.List;
 * @createDate 2022-09-05 15:42:13
 * @Entity com.macro.ocp.pojo.DealerAccountNumber
 */
+
 public interface DealerAccountNumberMapper extends BaseMapper<DealerAccountNumber> {
 
     /**

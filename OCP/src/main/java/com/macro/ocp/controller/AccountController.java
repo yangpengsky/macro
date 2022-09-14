@@ -2,6 +2,8 @@ package com.macro.ocp.controller;
 
 import com.macro.ocp.pojo.DealerAccountNumber;
 import com.macro.ocp.service.DealerAccountNumberService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ import java.util.Map;
  * @date: 2022/9/5 16:50
  * @version: 1.0.0
  */
+@Api(tags = "账户类接口")
 @CrossOrigin
 @RestController
 @RequestMapping("/account")
@@ -35,6 +38,9 @@ public class AccountController {
      * @author zhangkein
      * @date 2022/9/5 17:45
      */
+
+
+    @ApiOperation("登录")
     @PostMapping("/login")
     public Map<String, Object> login(HttpServletRequest request
             , @RequestBody DealerAccountNumber dealerAccountNumber) {

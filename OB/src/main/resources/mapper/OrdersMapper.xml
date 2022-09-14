@@ -45,6 +45,7 @@
     </sql>
 
 
+<!--    初审核订单信息-->
     <select id="selectOrderIF" parameterType="orders" resultMap="BaseResultMap">
         select order_code
         ,order_type,order_status,
@@ -75,11 +76,12 @@
             <if test="dealerCode != null">
                 and o.dealer_code=#{dealerCode}
             </if>
-            -- and order_status="提交"
+             and order_status="提交"
         </where>
         order by created_time asc
     </select>
 
+<!--    复审核订单信息-->
     <select id="selectOrderConformIF" parameterType="orders" resultMap="BaseResultMap">
         select order_code
         ,order_type,order_status,
@@ -196,7 +198,9 @@
                     #{code}
                 </foreach>
             </if>
+            and order_status="提交"
         </where>
+
     </update>
 
     <update id="updateOrderNoPass" parameterType="orders">
@@ -209,7 +213,9 @@
             <foreach collection="codes" close=")" separator="," item="code" open="(" index="index">
                 #{code}
             </foreach>
+            and OB_order_status="已审核"
         </where>
+
     </update>
 
     <select id="selectOrderByOrderCode" parameterType="orders" resultMap="BaseResultMap">
@@ -234,7 +240,7 @@
     <select id="selectInOrderInfo" resultType="orders" parameterType="list">
         select dealer_code,product_quantity,bulk_volume
         from orders
-            where summary_plan_code in
+        where summary_plan_code in
         <foreach item="order" index="index" collection="orders" open="(" separator="," close=")">
             #{order.summaryPlanCode}
         </foreach>
