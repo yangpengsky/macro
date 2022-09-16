@@ -42,5 +42,74 @@ public class MenuServiceImpl implements MenuService{
         return map;
     }
 
+    /*
+     * OB运营后台：菜单管理,添加菜单
+     */
+    @Override
+    public Map<String, Object> insertAllMenu(Menu menu) {
+        Map<String,Object> map = new HashMap<>();
+        Integer integer = menuMapper.insertAllMenu(menu);
+        if (integer>0){
+            map.put("code",integer);
+            map.put("message","插入菜单成功!");
+        }else{
+            map.put("code",integer);
+            map.put("message","插入菜单失败!");
+        }
+        return map;
+    }
+
+    /*
+     * OB运营后台：菜单管理,删除单个菜单
+     */
+    @Override
+    public Map<String, Object> deleteByMenuId(Menu menu) {
+        Map<String,Object> map = new HashMap<>();
+        Integer integer = menuMapper.deleteByMenuId(menu);
+        if (integer>0){
+            map.put("code",integer);
+            map.put("message","删除菜单成功!");
+        }else{
+            map.put("code",integer);
+            map.put("message","删除菜单失败!");
+        }
+        return map;
+    }
+
+    /*
+     * OB运营后台：菜单管理,删除多个菜单
+     */
+
+    @Override
+    public Map<String, Object> deleteAllByMenuId(Integer[] menuId) {
+        Map<String,Object> map = new HashMap<>();
+        Integer integer = menuMapper.deleteAllByMenuId(menuId);
+        if (integer>0){
+            map.put("code",integer);
+            map.put("message","删除多个菜单成功!");
+        }else{
+            map.put("code",integer);
+            map.put("message","删除多个菜单失败!");
+        }
+        return map;
+    }
+
+    /*
+     * OB运营后台：菜单管理,修改菜单
+     */
+    @Override
+    public Map<String, Object> updateByMenuId(Menu menu) {
+        Map<String, Object> map = new HashMap<>();
+        Integer integer = menuMapper.updateByMenuId(menu);
+        if (integer > 0) {
+            map.put("code", integer);
+            map.put("message", "修改菜单成功!");
+        } else {
+            map.put("code", integer);
+            map.put("message", "修改菜单失败!");
+        }
+        return map;
+    }
+
 
 }
