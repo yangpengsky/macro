@@ -30,6 +30,4 @@ public interface DealerService {
      */
     Map<String,Object> alterDealerInfo(Dealer dealer);
 
-
-
 }

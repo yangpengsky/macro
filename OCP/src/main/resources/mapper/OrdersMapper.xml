@@ -34,7 +34,6 @@
         order_code
         ,order_type
         ,order_status
-
         ,OB_order_Status
         ,delivery_method
         ,out_warehouse

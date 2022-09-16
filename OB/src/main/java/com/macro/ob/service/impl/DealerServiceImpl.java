@@ -72,11 +72,11 @@ public class DealerServiceImpl implements DealerService{
             map.put("code", 0);
             map.put("flag", true);
             map.put("info",rows);
-            map.put("message", "修改成功！");
+            map.put("message", "关联成功！");
         }else {
             map.put("code", 1);
             map.put("flag", false);
-            map.put("message", "修改失败！");
+            map.put("message", "关联失败！");
         }
         return map;
     }

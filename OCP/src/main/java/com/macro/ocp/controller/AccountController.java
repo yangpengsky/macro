@@ -68,7 +68,7 @@ public class AccountController {
     }
 
     /**
-     * <p>新建Map映射</p>
+     * <p>新建子账号</p>
      *
      * @param request:             HttpServletRequest对象，用于获取会话中的sesion
      * @param dealerAccountNumber: DealerAccountNumber对象，用于保存子账号信息

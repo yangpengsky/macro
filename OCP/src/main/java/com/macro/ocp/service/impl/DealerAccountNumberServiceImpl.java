@@ -294,7 +294,8 @@ public class DealerAccountNumberServiceImpl implements DealerAccountNumberServic
             map.put("message", "没有权限重置");
             return map;
         }
-        //将总账号编码放入
+        //将总账号编码及密码放入
+        dealerAccountNumber.setPassword(defaultPassword);
         dealerAccountNumber.setParentAccountCode(account.getAccountCode());
         //重置密码
         if (dealerAccountNumberMapper.updatePassword(dealerAccountNumber) > 0){
@@ -338,7 +339,14 @@ public class DealerAccountNumberServiceImpl implements DealerAccountNumberServic
         if (account.getParentAccountCode() != null){
             map.put("code", 3);
             map.put("flag", false);
-            map.put("message", "没有权限重置");
+            map.put("message", "没有权限修改");
+            return map;
+        }
+        //判断子账号编码是否存在
+        if (dealerAccountNumber.getAccountCode() == null){
+            map.put("code",2);
+            map.put("flag",false);
+            map.put("message","没有子账号编码");
             return map;
         }
         //设置总账号
