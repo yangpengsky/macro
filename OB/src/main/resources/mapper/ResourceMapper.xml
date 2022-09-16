@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.macro.ob.mapper.ResourceMapper">
+
+    <resultMap id="BaseResultMap" type="com.macro.ob.pojo.Resource">
+            <id property="resourceId" column="resource_id" jdbcType="INTEGER"/>
+            <result property="buttonName" column="button_name" jdbcType="VARCHAR"/>
+            <result property="permissionsLogo" column="permissions_logo" jdbcType="VARCHAR"/>
+            <result property="resourcePath" column="resource_path" jdbcType="VARCHAR"/>
+            <result property="method" column="method" jdbcType="VARCHAR"/>
+            <result property="createdTime" column="created_time" jdbcType="TIMESTAMP"/>
+            <result property="updatedTime" column="updated_time" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        resource_id,button_name,permissions_logo,
+        resource_path,method,created_time,
+        updated_time
+    </sql>
+
+<!--OB运营后台：资源列表,查看资源列表信息-->
+    <select id="selectAllByResourceId" resultMap="BaseResultMap">
+        select button_name,permissions_logo,
+               resource_path,method,created_time,
+               updated_time
+        from resource
+    </select>
+<!--OB运营后台：资源列表,添加资源列表信息-->
+    <insert id="insertAllResource" parameterType="com.macro.ob.pojo.Resource">
+        insert into resource(button_name,permissions_logo,
+                             resource_path,method)
+        values (#{buttonName},#{permissionsLogo},#{resourcePath},#{method})
+    </insert>
+<!--OB运营后台：资源列表,删除资源列表信息-->
+    <delete id="deleteByResourceId" parameterType="com.macro.ob.pojo.Resource">
+        delete from resource where resource_id=#{resourceId}
+    </delete>
+<!--OB运营后台：资源列表,删除多条资源列表信息-->
+    <delete id="deleteAllByResourceId" parameterType="com.macro.ob.pojo.Resource">
+        delete from resource
+        <where>
+            resource_id in
+            <foreach collection="resourceId" item="item" open="(" close=")" separator=",">
+            #{item}
+            </foreach>
+        </where>
+    </delete>
+<!--OB运营后台：资源列表,修改资源列表信息-->
+    <update id="updateByResourceId" parameterType="com.macro.ob.pojo.Resource">
+        update resource
+        <trim prefix="set" suffixOverrides="," prefixOverrides="">
+            <if test="buttonName           != null">button_name=#{buttonName},</if>
+            <if test="permissionsLogo      != null">permissions_logo=#{permissionsLogo},</if>
+            <if test="resourcePath         != null">resource_path=#{resourcePath},</if>
+            <if test="method               != null">method=#{method},</if>
+        </trim>
+        where resource_id = #{resourceId}
+    </update>
+
+</mapper>
